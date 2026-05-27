@@ -1,0 +1,619 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Racing+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  --heist:red;
+  --kibla:black;
+  --ty:azure;
+  --nyphomaniac: linear-gradient( 179deg,  rgba(0,0,0,1) 9.2%, rgba(127,16,16,1) 103.9% );
+  --masekunde:0.3s;
+  --primary-500: rgb(230, 52, 52);
+  --primary-600: #fe0202;
+  --secondary-500: #FFB620;
+  --off-white: #D0DFFF;
+  --red: #FF5A5A;
+  --dark-1: #000000;
+  --dark-2: #09090A;
+  --dark-3: #101012;
+  --dark-4: #1F1F22;
+  --light-1: #FFFFFF;
+  --light-2: #EFEFEF;
+  --light-3: #7878A3;
+  --light-4: #5C5C7B;
+  --wabling:rgba(255, 255, 255, 0.1);
+   --wablingkibla:rgba(4, 0, 0, 0.245);
+  --fontangkor:'Angor',san-serif;
+  --fontbelleza: 'Beleza',san-serif;
+  --fontRobik:"Rubik Burned", system-ui;
+  text-shadow: 2px 2px 9px var(--kibla);
+  --gap: 1.25rem;
+  --speed: 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --closed: 5rem;
+  --open: 30rem;
+  --accent: red;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* =========================
+   RESET + BACKGROUND
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.online {
+  width: 100vw;
+  overflow: hidden;
+  min-height: 100vh;
+
+  font-family: "Lato", sans-serif;
+
+  background: radial-gradient(
+    ellipse at bottom,
+    #020307 0%,
+    #000000 100%
+  );
+}
+
+/* =========================
+   STAR WRAPPER
+========================= */
+
+.meakins {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* =========================
+   BASE STAR STYLE
+========================= */
+
+#stars,
+#stars2,
+#stars3,
+#stars4,
+#stars5 {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+}
+
+/* =========================
+   SMALL STARS
+========================= */
+
+#stars {
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, white, transparent),
+    radial-gradient(1px 1px at 30% 40%, white, transparent),
+    radial-gradient(1px 1px at 50% 10%, white, transparent),
+    radial-gradient(1px 1px at 70% 70%, white, transparent),
+    radial-gradient(1px 1px at 90% 30%, white, transparent),
+    radial-gradient(1px 1px at 20% 80%, white, transparent),
+    radial-gradient(1px 1px at 60% 60%, white, transparent),
+    radial-gradient(1px 1px at 80% 90%, white, transparent),
+    radial-gradient(1px 1px at 40% 85%, white, transparent),
+    radial-gradient(1px 1px at 15% 55%, white, transparent);
+
+  background-size: cover;
+
+  animation: moveStars 80s linear infinite;
+
+  opacity: 0.8;
+}
+
+/* =========================
+   MEDIUM STARS
+========================= */
+
+#stars2 {
+  background-image:
+    radial-gradient(2px 2px at 15% 25%, white, transparent),
+    radial-gradient(2px 2px at 35% 65%, white, transparent),
+    radial-gradient(2px 2px at 55% 15%, white, transparent),
+    radial-gradient(2px 2px at 75% 85%, white, transparent),
+    radial-gradient(2px 2px at 95% 45%, white, transparent),
+    radial-gradient(2px 2px at 25% 95%, white, transparent);
+
+  animation: moveStars 120s linear infinite;
+
+  opacity: 0.7;
+}
+
+/* =========================
+   BIG STARS
+========================= */
+
+#stars3 {
+  background-image:
+    radial-gradient(3px 3px at 20% 30%, white, transparent),
+    radial-gradient(3px 3px at 60% 50%, white, transparent),
+    radial-gradient(3px 3px at 85% 75%, white, transparent),
+    radial-gradient(3px 3px at 45% 90%, white, transparent);
+
+  animation: moveStars 160s linear infinite;
+
+  opacity: 0.9;
+}
+
+/* =========================
+   EXTRA SMALL STARS
+========================= */
+
+#stars4 {
+  background-image:
+    radial-gradient(1px 1px at 5% 10%, white, transparent),
+    radial-gradient(1px 1px at 25% 35%, white, transparent),
+    radial-gradient(1px 1px at 45% 60%, white, transparent),
+    radial-gradient(1px 1px at 65% 20%, white, transparent),
+    radial-gradient(1px 1px at 85% 50%, white, transparent);
+
+  animation: moveStars 100s linear infinite reverse;
+
+  opacity: 0.5;
+}
+
+/* =========================
+   EXTRA MEDIUM STARS
+========================= */
+
+#stars5 {
+  background-image:
+    radial-gradient(2px 2px at 12% 18%, white, transparent),
+    radial-gradient(2px 2px at 42% 72%, white, transparent),
+    radial-gradient(2px 2px at 72% 42%, white, transparent),
+    radial-gradient(2px 2px at 92% 82%, white, transparent);
+
+  animation: moveStars 140s linear infinite reverse;
+
+  opacity: 0.6;
+}
+
+/* =========================
+   GLOW EFFECT
+========================= */
+
+#stars,
+#stars2,
+#stars3,
+#stars4,
+#stars5 {
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.8));
+   pointer-events: none;
+}
+
+/* =========================
+   TITLE
+========================= */
+.title {
+  position: relative;
+  z-index: 999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 450px;
+
+  pointer-events: auto;
+}
+
+/* =========================
+   SHOOTING STAR
+========================= */
+
+.shooting-star {
+  position: fixed;
+  top: -120px;
+  left: -120px;
+
+  width: 3px;
+  height: 160px;
+
+  z-index: 4;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,1),
+    rgba(255,255,255,0)
+  );
+
+  border-radius: 999px;
+
+  transform: rotate(-45deg);
+
+  animation: shootingStar 14s linear 5s infinite;
+
+  filter: drop-shadow(0 0 10px white);
+
+  pointer-events: none;
+}
+/* =========================
+   STAR MOVEMENT
+========================= */
+
+@keyframes moveStars {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+/* =========================
+   SHOOTING STAR ANIMATION
+========================= */
+
+@keyframes shootingStar {
+
+  0% {
+    transform: translate(-200px, -200px) rotate(-45deg);
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  12% {
+    transform: translate(140vw, 100vh) rotate(-45deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(140vw, 100vh) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+.desc
+{
+  height: 90px;
+
+}
+
+
+
+.start-btn {
+   background-image: linear-gradient(to right, #485563c2 0%, #000000 51%, #485563 100%);
+}
+
+.btn-grad {
+  margin: 10px;
+  padding: 10px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.reveal-btn {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+
+  animation: revealButton 0.6s ease forwards;
+
+  animation-delay: 5.5s;
+}
+
+@keyframes revealButton {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.note {
+  margin-top: 20px;
+
+  color: rgba(255,255,255,0.75);
+
+  font-family: "Courier New", monospace;
+
+  letter-spacing: 2px;
+
+  font-size: 14px;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    0 0 5px rgba(255,255,255,0.3),
+    0 0 10px rgba(12, 3, 3, 0.2);
+
+  user-select: none;
+}
+
+.note::after {
+  content: "_";
+
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/*ECOSTSTEM*/
+.eco-back
+{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  min-height: 100vh;
+  z-index: 1;
+ background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(-7,-7,-7,1) 0%, rgba(0,0,0,1) 90% );
+}
+
+/*Topbar*/
+.mali
+{
+  height: 70px;
+  width: 80%;
+  justify-self: center;
+  border: 0.5px solid var(--wabling);
+  margin-top: 15px;
+  border-radius: 15px;
+  display: flex;
+  padding: 20px 20px;
+  justify-content: space-between;
+  align-items: center;
+   background-image: var(--wabling);
+  backdrop-filter: blur(4px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  font-family: "Black Ops One", system-ui;
+  font-weight: 400;
+  color: azure;
+  letter-spacing: 0.5px;
+  font-style: normal;
+
+}
+.claus
+{
+  display: flex;
+  gap: 10px;
+  text-wrap: nowrap;
+  align-items: center;
+}
+.digii
+{
+  display: none;
+}
+
+.logo-top
+{
+  height: 50px;
+  align-self: center;
+
+}
+
+/*ANIMATED DOTS*/
+.dots-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* base dots */
+.dots-grid {
+  position: absolute;
+  inset: -200px;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.18) 1px,
+    transparent 1px
+  );
+
+  background-size: 20px 20px;
+
+  opacity: 1;
+}
+
+/* glowing cursor field */
+.dots-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle 180px at var(--mouse-x) var(--mouse-y),
+    rgba(0, 2, 3, 0.35),
+    rgba(55, 120, 199, 0.15) 30%,
+    transparent 70%
+  );
+
+  filter: blur(2px);
+  mix-blend-mode: screen;
+
+  transition: background 0.05s linear;
+}
+/* subtle movement */
+@keyframes floatDots {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-40px, -40px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/*introduction title*/
+/* introduction title */
+
+.obebaba {
+  font-family: "Black Ops One", system-ui;
+  font-weight: 900;
+  font-size: 30px;
+  margin-top: 20px;
+  text-wrap: nowrap;
+  color: azure;
+  letter-spacing: 0.5px;
+  font-style: normal;
+}
+
+/* MOBILE */
+
+@media (min-width: 550px) {
+  .obebaba {
+    font-weight: 400;
+    font-size: 20px;
+  }
+}
+
+
+@media (min-width: 950px) {
+  .obebaba {
+    font-weight: 400;
+    font-size: 40px;
+    text-wrap: wrap;
+  }
+}
+
+.eco-sub {
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.fak
+{
+  stop-color: black;
+}
+/*Caurosel*/
+ .carousel-wrapper {
+          width: 90%;
+          justify-self: center;
+          display: flex;
+          overflow: hidden;
+          position: relative;
+          padding: 20px 0;
+          height: 150px;
+          background-color: transparent;
+        }
+
+        .carousel-track {
+          display: flex;
+          width: max-content;
+          animation: scroll linear infinite;
+          animation-play-state: running;
+        }
+
+        .carousel-wrapper:hover .carousel-track {
+          animation-play-state: paused;
+        }
+
+        .carousel-item {
+          flex: 0 0 auto;
+          width: 200px;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          padding: 15px 10px;
+          border-radius: 10px;
+          background-color: var(--wablingkibla);
+          border: 1px solid var(--wabling);
+          margin-right: 20px;
+          text-align: center;
+           backdrop-filter: blur(4px) saturate(150%);
+          -webkit-backdrop-filter: blur(10px) saturate(150%);
+        }
+
+        .carousel-item:hover
+        {
+          content: '';
+          border: 1px solid var(--wabling);
+          background-color: var(--wabling);
+          cursor: pointer;
+
+        }
+
+        .caorosel-image {
+          width: 25%;
+          object-fit: cover;
+          border-radius: 20px;
+          transition: 0.4s ease;
+        }
+
+        .caorosel-image:hover {
+          transform: scale(1.05);
+        }
+
+        .carousel-title {
+          color: white;
+          margin-top: 12px;
+          font-size: 18px;
+          font-weight: 600;
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      
