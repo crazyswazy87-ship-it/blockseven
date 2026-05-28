@@ -210,8 +210,9 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
-  margin-top: 450px;
+  margin-top: 150px;
 
   pointer-events: auto;
 }
@@ -537,8 +538,9 @@ html, body, #root {
 
 .fak
 {
-  stop-color: black;
+  
 }
+
 /*Caurosel*/
  .carousel-wrapper {
           width: 90%;
