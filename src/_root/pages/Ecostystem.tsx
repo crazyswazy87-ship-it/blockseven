@@ -5,19 +5,23 @@ import TopBar from "../components/shared/TopBar";
 import Domain from "../../../public/assets/do.jpg";
 import Css from "../../../public/assets/css.jpg";
 import Git from "../../../public/assets/git.jpg";
-import Django from "../../../public/assets/django.jpg";
 import ReactImg from "../../../public/assets/react.jpg";
 import Html from "../../../public/assets/html.jpg";
 import Javascript from "../../../public/assets/js.jpg";
-import Claude from "../../../public/assets/ap.jpg";
-import Python from "../../../public/assets/py.jpg";
+import Codex from "../../../public/assets/ap.jpg";
 import Gitt from "../../../public/assets/gittt.jpg";
 import Dev from "../../../public/assets/dev.jpg";
+import Ts from "../../../public/assets/ts.png";
+import Vercel from "../../../public/assets/verc.jpg";
+import Appwrite from "../../../public/assets/appw.png";
+import AI from "../../../public/assets/aiii.jpg";
+
+import prada from "../../../public/assets/westy.png";
 
 import { motion } from "framer-motion";
-import GolgiShape from "../components/shared/GolgiShape";
+import MiniDashboardCard from "../components/shared/MiniDashBoardCard";
 
-/* ✅ Animation */
+/* Animation */
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -33,15 +37,17 @@ const fadeUp = {
 export const carouselImages = [
   { src: Domain, title: "Hosting", className: "caorosel-image" },
   { src: Css, title: "CSS", className: "caorosel-image" },
-  { src: Git, title: "Git Workflow", className: "caorosel-image" },
-  { src: Django, title: "Django", className: "caorosel-image" },
-  { src: ReactImg, title: "React Dev", className: "caorosel-image" },
+  { src: Git, title: "Git ", className: "caorosel-image" },
+  { src: ReactImg, title: "React", className: "caorosel-image" },
   { src: Html, title: "HTML", className: "caorosel-image" },
   { src: Javascript, title: "JavaScript", className: "caorosel-image" },
-  { src: Claude, title: "AI Systems", className: "caorosel-image" },
-  { src: Python, title: "Python", className: "caorosel-image" },
+  { src: Codex, title: "Codex ", className: "caorosel-image" },
   { src: Gitt, title: "Version Control", className: "caorosel-image" },
-  { src: Dev, title: "Dev Options", className: "caorosel-image" },
+  { src: Ts, title: "Typescript", className: "caorosel-image" },
+  { src: Vercel, title: "Vercel", className: "caorosel-image" },
+  { src: Appwrite, title: "Appwrite", className: "caorosel-image" },
+  { src: AI, title: " AI", className: "caorosel-image" },
+  { src: Dev, title: "Templates", className: "caorosel-image" },
 ];
 
 const Ecostystem = () => {
@@ -49,29 +55,20 @@ const Ecostystem = () => {
     <div className="eco-back relative overflow-hidden">
       
       {/* BACKGROUND */}
-      <div className="absolute inset-0 z-0">
+      <motion.div
+        className="absolute inset-0 z-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
+      >
         <ParticleBackground />
-      </div>
+      </motion.div>
 
       {/* UI LAYER */}
       <div className="relative z-10">
+        
+        {/* NO MOTION HERE */}
         <TopBar />
-
-        {/* TITLE */}
-        <div className="obebaba text-center mt-6">
-          BUILT WITH POWERFUL SYSTEMS
-        </div>
-
-        {/* SUBTITLE */}
-        <div className="eco-sub text-center">
-          Certified technologies powering modern digital systems
-        </div>
-
-        {/* OPTIONAL EFFECT */}
-        <div className="shooting-star"></div>
-
-        {/* CAROUSEL */}
-        <InfiniteCarousel images={carouselImages} speed={25} />
 
         {/* ABOUT SECTION */}
         <motion.section
@@ -85,26 +82,106 @@ const Ecostystem = () => {
             variants={fadeUp}
             className="text-2xl md:text-3xl font-semibold"
           >
-            What is Block 7?
+            <motion.div
+              className="obebaba text-center mt-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              WE ENGINEER DIGITAL EXPERIENCES
+            </motion.div>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
             className="mt-4 text-gray-400 leading-relaxed"
           >
-            Block 7 is a social technology company creating culture-first digital
-            platforms powered by content and AI. We combine viral entertainment,
-            AI-driven communication, community-powered creation, and local culture
-            with global reach.
-          </motion.p>
-
-          <motion.p
-            variants={fadeUp}
-            className="mt-4 text-gray-500 italic"
-          >
-             <GolgiShape />
+            <motion.div
+              className="eco-sub text-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 1 }}
+            >
+              AI systems, modern development, immersive interfaces,
+              and culture-driven technology.
+              Certified technologies powering modern digital systems
+            </motion.div>
           </motion.p>
         </motion.section>
+
+        {/* SHOOTING STAR */}
+        <motion.div
+          className="shooting-star"
+          initial={{ opacity: 0, x: -200 }}
+          animate={{ opacity: 1, x: 1200 }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            repeatDelay: 8,
+            ease: "linear",
+          }}
+        />
+
+        {/* TITLE */}
+        <motion.p
+          className="ill"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          TECHNOLOGIES BEHIND THE VISION
+        </motion.p>
+
+        {/* CAROUSEL */}
+        <motion.div
+          className="tooltip"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <InfiniteCarousel images={carouselImages} speed={25} />
+        </motion.div>
+
+        {/* IMAGE + TEXT */}
+        <motion.div
+          className="gucci"
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.img
+            src={prada}
+            alt="Swazy"
+            className="prada"
+            initial={{ scale: 0.8, rotate: -4 }}
+            whileInView={{ scale: 1, rotate: 0 }}
+            transition={{ duration: 1 }}
+            whileHover={{
+              scale: 1.03,
+              transition: { duration: 0.3 },
+            }}
+          />
+
+          <motion.div
+            className="tooltipp"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
+            The internet is evolving beyond static experiences.
+            We build immersive digital systems that combine
+            technology, motion, AI, and culture into living platforms.
+          </motion.div>
+        </motion.div>
+
+        {/* DASHBOARD CARD */}
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <MiniDashboardCard />
+        </motion.div>
 
       </div>
     </div>

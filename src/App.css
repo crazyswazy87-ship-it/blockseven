@@ -6,6 +6,7 @@
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
+  --patelo: "Black Ops One", system-ui;;
   --heist:red;
   --kibla:black;
   --ty:azure;
@@ -390,7 +391,8 @@ html, body, #root {
 .mali
 {
   height: 70px;
-  width: 80%;
+  width: 90%;
+  flex-shrink: 0;
   justify-self: center;
   border: 0.5px solid var(--wabling);
   margin-top: 15px;
@@ -500,14 +502,22 @@ html, body, #root {
 /* introduction title */
 
 .obebaba {
+  background: linear-gradient(
+    109.6deg,
+    rgb(206, 248, 255) 11.2%,
+    rgb(255, 255, 255) 100.6%
+    
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
   font-family: "Black Ops One", system-ui;
-  font-weight: 900;
-  font-size: 30px;
+  font-size: 50px;
   margin-top: 20px;
-  text-wrap: nowrap;
-  color: azure;
-  letter-spacing: 0.5px;
-  font-style: normal;
+  font-weight: 900;
 }
 
 /* MOBILE */
@@ -536,86 +546,190 @@ html, body, #root {
   font-size: 14px;
 }
 
-.fak
+.ill
 {
+  font-family: var(--patelo);
+  font-size: 20px;
+  margin-top: 20px;
+  color: azure;
+  letter-spacing: 0.4px;
+}
+
+/*Tooltip*/
+.tooltip {
+  color: #fff;
+  font-size: 18px;
+  width: 90%;
+  height: 150px;
+  margin-top: 20px;
+  display: flex;
+  justify-self: center;
+  text-align: center;
+  border: 1px solid var(--wabling);
+  background-color: rgba(255, 255, 255, 0.062);
+  backdrop-filter: blur(4px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  font-family: "Black Ops One", system-ui;
+  --b: 3em; /* tail dimension */
+
+  --p: 34%;  /* main position (0%:left 100%:right) */
+  --r: 1.2em; /* the radius */
+
+  padding: 1em;
+  border-radius: var(--r) var(--r) min(var(--r),100% - var(--p) - var(--b)/4) min(var(--r),var(--p) - var(--b)/4)/var(--r);
+  position: relative;
+}
+
+
+.tooltip:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: clamp(var(--b)/-2,var(--p) - 3*var(--b)/4,100% - var(--b));
+  width: var(--b);
+  aspect-ratio: 1;
+  background: inherit;
+  --g:#000 calc(100% - 1px),#0000;
+  -webkit-mask: 
+    radial-gradient(circle closest-side at 12% 88%,var(--g)),
+    radial-gradient(20% 20% at 52% 55%,var(--g)),
+    radial-gradient(25% 25% at 75% 0,var(--g));
+}
+
+.bafo
+{
+  position: absolute;
   
 }
 
 /*Caurosel*/
- .carousel-wrapper {
-          width: 90%;
-          justify-self: center;
-          display: flex;
-          overflow: hidden;
-          position: relative;
-          padding: 20px 0;
-          height: 150px;
-          background-color: transparent;
-        }
+ .carousel-wrapper 
+ {
+    width: 100%;
+    justify-self: center;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+    
+    height: 150px;
+    background-color: transparent;
+  }
 
-        .carousel-track {
-          display: flex;
-          width: max-content;
-          animation: scroll linear infinite;
-          animation-play-state: running;
-        }
+  .carousel-track {
+    display: flex;
+    width: max-content;
+    animation: scroll linear infinite;
+    animation-play-state: running;
+  }
 
-        .carousel-wrapper:hover .carousel-track {
-          animation-play-state: paused;
-        }
+  .carousel-wrapper:hover .carousel-track {
+    animation-play-state: paused;
+  }
 
-        .carousel-item {
-          flex: 0 0 auto;
-          width: 200px;
-          height: 80px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          padding: 15px 10px;
-          border-radius: 10px;
-          background-color: var(--wablingkibla);
-          border: 1px solid var(--wabling);
-          margin-right: 20px;
-          text-align: center;
-           backdrop-filter: blur(4px) saturate(150%);
-          -webkit-backdrop-filter: blur(10px) saturate(150%);
-        }
+  .carousel-item {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 10px;
+    border-radius: 10px;
+    background-color: var(--wablingkibla);
+    border: 1px solid var(--wabling);
+    margin-right: 20px;
+    text-align: center;
+      backdrop-filter: blur(4px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+  }
 
-        .carousel-item:hover
-        {
-          content: '';
-          border: 1px solid var(--wabling);
-          background-color: var(--wabling);
-          cursor: pointer;
+  .carousel-item:hover
+  {
+    content: '';
+    border: 1px solid var(--wabling);
+    background: linear-gradient(
+    109.6deg,
+    rgba(107, 188, 255, 0.801) 04.2%,
+    rgba(255, 255, 255, 0.041) 100.6%
+    
+    );
+    cursor: pointer;
 
-        }
+  }
 
-        .caorosel-image {
-          width: 25%;
-          object-fit: cover;
-          border-radius: 20px;
-          transition: 0.4s ease;
-        }
+  .caorosel-image {
+    width: 25%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: 0.4s ease;
+  }
 
-        .caorosel-image:hover {
-          transform: scale(1.05);
-        }
+  .caorosel-image:hover {
+    transform: scale(1.05);
+  }
 
-        .carousel-title {
-          color: white;
-          margin-top: 12px;
-          font-size: 18px;
-          font-weight: 600;
-        }
+  .carousel-title {
+    color: white;
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 600;
+      font-family: var(--patelo);
+      letter-spacing: 0.5px;
+  }
 
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
 
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .gucci
+  {
+    width: 60%;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    flex-direction: row;
+  }
+
+  .prada
+  {
+    height: 180px;
+  }
+
+  /* HTML: <div class="tooltip">This is a Tooltip with a gradient or solid coloration and with border radius </div> */
+.tooltipp {
+  color: #fff;
+  font-size: 18px;
+  min-width: 380px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  letter-spacing: 0.6px;
+  font-weight: 500;
+  height: 210px;
+  max-width: 28ch;
+  text-align: center;
+}
+.tooltipp {
+  --s: 1.5em; /* triangle size */
+  --p: 0%; /* triangle position (0%:top 100%:bottom) */
+  --r: 1em; /* the radius */
+
+  padding: 1em;
+  border: var(--s) solid #0000;
+  border-radius: calc(var(--r) + var(--s));
+  background: border-box  linear-gradient(-45deg,#295172,#3a3f3d49); /* the coloration */
+  --_m:/var(--s) var(--s) no-repeat;
+  --_p: clamp(var(--r) + 3*var(--s)/2,var(--p),100% - var(--r) - 3*var(--s)/2);
+  -webkit-mask:
+    linear-gradient(#000 0 0) padding-box,
+    radial-gradient(100% 100% at 0 100%,#0000 99%,#000 102%) 0 calc(var(--_p) + var(--s)/2) var(--_m),
+    radial-gradient(100% 100% at 0 0   ,#0000 99%,#000 102%) 0 calc(var(--_p) - var(--s)/2) var(--_m);
+}
