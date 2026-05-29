@@ -19,7 +19,7 @@ import AI from "../../../public/assets/aiii.jpg";
 import prada from "../../../public/assets/westy.png";
 
 import { motion } from "framer-motion";
-import MiniDashboardCard from "../components/shared/MiniDashBoardCard";
+import DotsMap from "../components/shared/DotsMap";
 
 /* Animation */
 const fadeUp = {
@@ -67,7 +67,6 @@ const Ecostystem = () => {
       {/* UI LAYER */}
       <div className="relative z-10">
         
-        {/* NO MOTION HERE */}
         <TopBar />
 
         {/* ABOUT SECTION */}
@@ -92,7 +91,7 @@ const Ecostystem = () => {
             </motion.div>
           </motion.h2>
 
-          <motion.p
+          <motion.div
             variants={fadeUp}
             className="mt-4 text-gray-400 leading-relaxed"
           >
@@ -106,7 +105,7 @@ const Ecostystem = () => {
               and culture-driven technology.
               Certified technologies powering modern digital systems
             </motion.div>
-          </motion.p>
+          </motion.div>
         </motion.section>
 
         {/* SHOOTING STAR */}
@@ -174,13 +173,15 @@ const Ecostystem = () => {
           </motion.div>
         </motion.div>
 
-        {/* DASHBOARD CARD */}
+        {/* GLOBE */}
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <MiniDashboardCard />
+          <section className="globe-wrapper">
+            {typeof window !== "undefined" && <DotsMap />}
+          </section>
         </motion.div>
 
       </div>

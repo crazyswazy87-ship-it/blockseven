@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Racing+Sans+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Black+Ops+One&display=swap');
 
 #root {
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
-  --patelo: "Black Ops One", system-ui;;
+  --patelo:  "Alfa Slab One", serif;
   --heist:red;
   --kibla:black;
   --ty:azure;
@@ -379,12 +378,18 @@ html, body, #root {
 /*ECOSTSTEM*/
 .eco-back
 {
-  height: 100vh;
+  height: 1100vh;
   width: 100vw;
   overflow: hidden;
-  min-height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
   z-index: 1;
  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(-7,-7,-7,1) 0%, rgba(0,0,0,1) 90% );
+}
+
+.eco-back::-webkit-scrollbar
+{
+  width: 0;
 }
 
 /*Topbar*/
@@ -514,7 +519,7 @@ html, body, #root {
 
   background-clip: text;
 
-  font-family: "Black Ops One", system-ui;
+  font-family: var(--patelo);
   font-size: 50px;
   margin-top: 20px;
   font-weight: 900;
@@ -708,12 +713,12 @@ html, body, #root {
   /* HTML: <div class="tooltip">This is a Tooltip with a gradient or solid coloration and with border radius </div> */
 .tooltipp {
   color: #fff;
-  font-size: 18px;
-  min-width: 380px;
+  font-size: 16px;
+  min-width: 300px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   letter-spacing: 0.6px;
   font-weight: 500;
-  height: 210px;
+  height: 230px;
   max-width: 28ch;
   text-align: center;
 }
@@ -732,4 +737,28 @@ html, body, #root {
     linear-gradient(#000 0 0) padding-box,
     radial-gradient(100% 100% at 0 100%,#0000 99%,#000 102%) 0 calc(var(--_p) + var(--s)/2) var(--_m),
     radial-gradient(100% 100% at 0 0   ,#0000 99%,#000 102%) 0 calc(var(--_p) - var(--s)/2) var(--_m);
+}
+
+.globe-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: clamp(400px, 70vh, 750px);
+
+  overflow: hidden;
+}
+
+.globe-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
