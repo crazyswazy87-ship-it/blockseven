@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Racing+Sans+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Black+Ops+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -26,9 +24,7 @@
   --light-4: #5C5C7B;
   --wabling:rgba(255, 255, 255, 0.1);
    --wablingkibla:rgba(4, 0, 0, 0.245);
-  --fontangkor:'Angor',san-serif;
-  --fontbelleza: 'Beleza',san-serif;
-  --fontRobik:"Rubik Burned", system-ui;
+  --fontgoldman:"Goldman", sans-serif;
   text-shadow: 2px 2px 9px var(--kibla);
   --gap: 1.25rem;
   --speed: 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -56,29 +52,136 @@ html, body, #root {
 .online {
   width: 100vw;
   overflow: hidden;
-  min-height: 100vh;
-
-  font-family: "Lato", sans-serif;
-
+  height: 200vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
   background: radial-gradient(
     ellipse at bottom,
-    #020307 0%,
+    #000000 0%,
     #000000 100%
   );
 }
 
-/* =========================
-   STAR WRAPPER
-========================= */
+.online::-webkit-scrollbar
+{width: 0;}
 
-.meakins {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
+/*=================
+Topbar
+===============*/
+.topbar
+{
+  position: absolute;
+  z-index: 0;
 }
+
+.card-nav-top
+{
+  background-color: var(--ty);
+  font-family: var(--fontgoldman);
+  font-weight: 700;
+}
+.logoo
+{
+  height: 50px;
+}
+.miristaa
+{
+  font-weight: 900;
+  letter-spacing: 0.9px;
+  font-size: 15px;
+  color: black;
+}
+
+/*==========
+scrollstack
+============*/
+.card-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  height: 50vh;
+  align-self: center;
+}
+
+.card-container::-webkit-scrollbar
+{
+  width: 0;
+}
+
+.digz
+{
+  position:absolute;
+  background-color: yellow;
+}
+
+.twenty
+{
+  background-color: red;
+  
+}
+
+/* =========================
+   TITLE
+========================= */
+.title {
+  position: absolute;
+  inset: 0; 
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.shooting-star {
+  position: fixed;
+  top: -120px;
+  left: -120px;
+
+  width: 3px;
+  height: 160px;
+  inset: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,1),
+    rgba(255,255,255,0)
+  );
+
+  border-radius: 999px;
+
+  transform: rotate(-45deg);
+
+  animation: shootingStar 14s linear 5s infinite;
+
+  filter: drop-shadow(0 0 10px white);
+
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* =========================
    BASE STAR STYLE
@@ -200,53 +303,8 @@ html, body, #root {
    pointer-events: none;
 }
 
-/* =========================
-   TITLE
-========================= */
-.title {
-  position: relative;
-  z-index: 999;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
-  margin-top: 150px;
-
-  pointer-events: auto;
-}
-
-/* =========================
-   SHOOTING STAR
-========================= */
-
-.shooting-star {
-  position: fixed;
-  top: -120px;
-  left: -120px;
-
-  width: 3px;
-  height: 160px;
-
-  z-index: 4;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,1),
-    rgba(255,255,255,0)
-  );
-
-  border-radius: 999px;
-
-  transform: rotate(-45deg);
-
-  animation: shootingStar 14s linear 5s infinite;
-
-  filter: drop-shadow(0 0 10px white);
-
-  pointer-events: none;
-}
 /* =========================
    STAR MOVEMENT
 ========================= */
@@ -553,11 +611,12 @@ html, body, #root {
 
 .ill
 {
-  font-family: var(--patelo);
+  font-family: var(--fontgoldman);
   font-size: 20px;
-  margin-top: 20px;
+  font-weight: 700;
+  margin-top: -50px;
   color: azure;
-  letter-spacing: 0.4px;
+  letter-spacing: 1px;
 }
 
 /*Tooltip*/
@@ -715,11 +774,12 @@ html, body, #root {
   color: #fff;
   font-size: 16px;
   min-width: 300px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  letter-spacing: 0.6px;
+  font-family: var(--fontgoldman);
+  letter-spacing: 1px;
   font-weight: 500;
-  height: 230px;
+  height: 250px;
   max-width: 28ch;
+  font-weight: 400;
   text-align: center;
 }
 .tooltipp {
