@@ -257,7 +257,7 @@ const Home = () => {
               </ScrollStackItem>
               <ScrollStackItem itemClassName="twenty">
                 <h2>Card 3</h2>
-                 COMING SOON
+                 COMING SOOner than gta 6
               </ScrollStackItem>
             </ScrollStack>
         
