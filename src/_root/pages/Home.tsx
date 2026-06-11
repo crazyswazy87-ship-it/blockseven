@@ -257,7 +257,7 @@ const Home = () => {
               </ScrollStackItem>
               <ScrollStackItem itemClassName="twenty">
                 <h2>Card 3</h2>
-                 ww
+                 COMING SOON
               </ScrollStackItem>
             </ScrollStack>
         
