@@ -7,6 +7,12 @@
   --heist:red;
   --kibla:black;
   --ty:azure;
+  --yutfiyut:linear-gradient(
+    109.6deg,
+    rgba(107, 188, 255, 0.801) 04.2%,
+    rgba(255, 255, 255, 0.041) 100.6%
+    
+    );;
   --nyphomaniac: linear-gradient( 179deg,  rgba(0,0,0,1) 9.2%, rgba(127,16,16,1) 103.9% );
   --masekunde:0.3s;
   --primary-500: rgb(230, 52, 52);
@@ -114,11 +120,24 @@ scrollstack
   background-color: yellow;
 }
 
+
+/*==============
+srollcards
+=============*/
 .twenty
 {
-  background-color: red;
-  
+  background-color: transparent;
+  backdrop-filter: blur(9px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
 }
+
+.twenty-two
+{
+  background-color: var(--ty);
+  backdrop-filter: blur(9px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+}
+
 
 /* =========================
    TITLE
@@ -127,11 +146,47 @@ scrollstack
   position: absolute;
   inset: 0; 
   z-index: 1;
+  height: 60px;
+  width: 100%;
+  background-color: var(--wabling);
+  border-radius: inherit;
+  margin-top: 3px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: left;
 }
+
+.title:hover
+{
+  background: var(--yutfiyut);
+}
+
+/*=========
+1m valuation
+=========*/
+.friends,
+.friends-two
+{
+ position: absolute;
+  inset: 0; 
+  margin-top: 70px;
+  z-index: 1;
+  height: 280px;
+  gap: 30px;
+
+justify-content: space-around;  border-radius: inherit;
+  width: 100%;
+  border: 2px var(--ty);
+  background-color: transparent;
+  display: flex;
+}
+
+
+.friends:hover
+{
+  background: var(--yutfiyut);
+}
+
 
 .shooting-star {
   position: fixed;
@@ -160,6 +215,40 @@ scrollstack
   pointer-events: none;
 }
 
+/*===========
+biggie
+==========*/
+.descri
+{
+  font-family: var(--fontgoldman);
+  font-weight: 400;
+  font-size: 30px;
+  text-wrap:wrap;
+  color: var(--kibla);
+
+}
+
+.hedd
+{
+  font-family: var(--fontgoldman);
+  font-weight: 400;
+  font-size: 20px;
+  text-wrap:wrap;
+  color: var(--kibla);
+}
+
+.umbwakni
+{
+    width: 400px;
+  border-radius: 20px;
+  height: 268px;
+  border: none;
+  background: var(ty);
+  margin-top: -40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 
 
@@ -565,22 +654,12 @@ scrollstack
 /* introduction title */
 
 .obebaba {
-  background: linear-gradient(
-    109.6deg,
-    rgb(206, 248, 255) 11.2%,
-    rgb(255, 255, 255) 100.6%
-    
-  );
-
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
   background-clip: text;
-
-  font-family: var(--patelo);
-  font-size: 50px;
+  font-family: var(--fontgoldman);
+  font-size: 55px;
   margin-top: 20px;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 /* MOBILE */
@@ -588,7 +667,7 @@ scrollstack
 @media (min-width: 550px) {
   .obebaba {
     font-weight: 400;
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -602,11 +681,13 @@ scrollstack
 }
 
 .eco-sub {
-  color: rgba(255,255,255,0.7);
+  color: rgb(251, 252, 252);
   text-align: center;
+  font-family: var(--fontgoldman);
   margin-top: 10px;
   letter-spacing: 2px;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .ill
@@ -633,7 +714,8 @@ scrollstack
   background-color: rgba(255, 255, 255, 0.062);
   backdrop-filter: blur(4px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
-  font-family: "Black Ops One", system-ui;
+  font-family: var(--fontgoldman);
+  font-weight: 400;
   --b: 3em; /* tail dimension */
 
   --p: 34%;  /* main position (0%:left 100%:right) */
@@ -675,7 +757,7 @@ scrollstack
     overflow: hidden;
     position: relative;
     padding: 20px 0;
-    
+    font-family: var(--fontgoldman);
     height: 150px;
     background-color: transparent;
   }
@@ -686,6 +768,7 @@ scrollstack
     animation: scroll linear infinite;
     animation-play-state: running;
   }
+
 
   .carousel-wrapper:hover .carousel-track {
     animation-play-state: paused;
@@ -704,6 +787,7 @@ scrollstack
     background-color: var(--wablingkibla);
     border: 1px solid var(--wabling);
     margin-right: 20px;
+    font-family: var(--fontgoldman);
     text-align: center;
       backdrop-filter: blur(4px) saturate(150%);
     -webkit-backdrop-filter: blur(10px) saturate(150%);
@@ -739,8 +823,8 @@ scrollstack
     margin-top: 12px;
     font-size: 18px;
     font-weight: 600;
-      font-family: var(--patelo);
-      letter-spacing: 0.5px;
+    font-family: var(--fontgoldman);
+    letter-spacing: 0.5px;
   }
 
   @keyframes scroll {
@@ -800,8 +884,8 @@ scrollstack
 }
 
 .globe-wrapper {
-  width: 100%;
-  max-width: 1200px;
+  width: 300px;
+  width: inherit;
   margin: 0 auto;
 
   display: flex;
@@ -814,10 +898,13 @@ scrollstack
 }
 
 .globe-container {
-  width: 100%;
-  height: 100%;
+  width: 370px;
+  height:320px;
+  margin-top: -75px;
   position: relative;
-
+  background-color: transparent;
+  border-radius: 20px;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;

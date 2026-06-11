@@ -21,8 +21,22 @@ import Ts from "../../../public/assets/ts.png";
 import Vercel from "../../../public/assets/verc.jpg";
 import Appwrite from "../../../public/assets/appw.png";
 import AI from "../../../public/assets/aiii.jpg";
+import Carousel from "../../component/Carousel";
+import DotsMap from "../components/shared/DotsMap";
 
 const Home = () => {
+    /* Animation */
+    const fadeUp = {
+      hidden: { opacity: 0, y: 40 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.8,
+          ease: "easeOut",
+        },
+      },
+    };
 
    const items = [
     {
@@ -54,7 +68,7 @@ const Home = () => {
       ]
     }
   ];
-  
+
  const carouselImages = [
   { src: Domain, title: "Hosting", className: "caorosel-image" },
   { src: Css, title: "CSS", className: "caorosel-image" },
@@ -88,8 +102,8 @@ const Home = () => {
               theme="dark"
             />
 
-           <ScrollStack className="card-container">
-               {/* TITLE */}
+      <ScrollStack className="card-container">
+          {/* TITLE */}
         <motion.p
           className="ill"
           initial={{ opacity: 0, y: 40 }}
@@ -106,8 +120,8 @@ const Home = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <InfiniteCarousel images={carouselImages} speed={25} />
-        </motion.div>
+       <InfiniteCarousel images={carouselImages} speed={25} />
+       </motion.div>
               <ScrollStackItem>
                   {/* IMAGE + TEXT */}
                 <motion.div
@@ -144,13 +158,12 @@ const Home = () => {
               </ScrollStackItem>
               
               <ScrollStackItem itemClassName="twenty">
-                <h2>Card 1</h2>
                 <div className="title">
 
                   <img 
                     src={yuste}
                     alt="Block 7"
-                    height={90}
+                    height={57}
                   />
 
                   <img
@@ -159,16 +172,92 @@ const Home = () => {
 
 
                 </div>
+
+                <div className="friends">
+                  <div className="umbwa">
+                    <Carousel
+                      baseWidth={300}
+                      autoplay={false}
+                      autoplayDelay={3000}
+                      pauseOnHover={false}
+                      loop={false}
+                      round={false}
+                    />
+                  </div>
+
+                  <span className="umbwa">
+                     {/* ABOUT SECTION */}
+                    <motion.section
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.4 }}
+                      variants={fadeUp}
+                      className="max-w-4xl mx-auto py-16 text-white"
+                    >
+                      <motion.h2
+                        variants={fadeUp}
+                        className="text-2xl md:text-3xl font-semibold"
+                      >
+                        <motion.div
+                          className="obebaba text-center mt-6"
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 1 }}
+                        >
+                          WE ENGINEER DIGITAL EXPERIENCES
+                        </motion.div>
+                      </motion.h2>
+            
+                      <motion.div
+                        variants={fadeUp}
+                        className="mt-4 text-gray-400 leading-relaxed"
+                      >
+                        <motion.div
+                          className="eco-sub text-center"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 0.3, duration: 1 }}
+                        >
+                          AI systems, modern development, immersive interfaces,
+                          and culture-driven technology.
+                          Certified technologies powering modern digital systems
+                        </motion.div>
+                      </motion.div>
+                    </motion.section>
+                  </span>
+                </div>
               </ScrollStackItem>
-              <ScrollStackItem itemClassName="twenty">
-                <h2>Card 2</h2>
-                <p>This is the second card in the stack</p>
+
+              <ScrollStackItem itemClassName="twenty-two">
+                <div className="friends-two">
+
+                  <div className="umbwakni">
+                    <span className="descri">
+                      I create 3d websites built for global visibility for millions of users worldwide.
+                    </span>
+
+                    <span className="hedd">
+                      click here to take your business global  
+                    </span>
+
+                  </div>
+                  
+                  <div className="umbwa">
+                     {/* GLOBE */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 80 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 1 }}
+                    >
+                        {typeof window !== "undefined" && <DotsMap />}
+                    </motion.div>
+                  </div>
+
+                </div>
               </ScrollStackItem>
               <ScrollStackItem itemClassName="twenty">
                 <h2>Card 3</h2>
-                 <Link  to='/ecosystem'className="start-btn btn-grad reveal-btn">
-                    EXPLORE BEYOND
-                 </Link>
+                 ww
               </ScrollStackItem>
             </ScrollStack>
         

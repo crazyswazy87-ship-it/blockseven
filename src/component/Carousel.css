@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  --patelo:  "Alfa Slab One", serif;
+  --heist:red;
+  --kibla:black;
+  --ty:azure;
+  --yutfiyut:linear-gradient(
+    109.6deg,
+    rgba(107, 188, 255, 0.801) 04.2%,
+    rgba(255, 255, 255, 0.041) 100.6%
+    
+    );;
+  --nyphomaniac: linear-gradient( 179deg,  rgba(0,0,0,1) 9.2%, rgba(127,16,16,1) 103.9% );
+  --masekunde:0.3s;
+  --primary-500: rgb(230, 52, 52);
+  --primary-600: #fe0202;
+  --secondary-500: #FFB620;
+  --off-white: #D0DFFF;
+  --red: #FF5A5A;
+  --dark-1: #000000;
+  --dark-2: #09090A;
+  --dark-3: #101012;
+  --dark-4: #1F1F22;
+  --light-1: #FFFFFF;
+  --light-2: #EFEFEF;
+  --light-3: #7878A3;
+  --light-4: #5C5C7B;
+  --wabling:rgba(255, 255, 255, 0.1);
+   --wablingkibla:rgba(4, 0, 0, 0.245);
+  --fontgoldman:"Goldman", sans-serif;
+  text-shadow: 2px 2px 9px var(--kibla);
+  --gap: 1.25rem;
+  --speed: 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --closed: 5rem;
+  --open: 30rem;
+  --accent: red;
+}
+
+.umbwa
+{
+  width: 400px;
+  border-radius: 20px;
+  height: 268px;
+  border: none;
+  background: transparent;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  
+}
+.carousel-container {
+  position: relative;
+  overflow: hidden; 
+  height: inherit;
+  border-radius: 24px;
+  padding: 16px;
+  --outer-r: 24px;
+  --p-distance: 12px;
+}
+
+.carousel-container:hover
+{
+   border: none;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll linear infinite;
+  animation-play-state: running;
+}
+
+.carousel-track:hover
+{
+  animation-play-state: paused;
+}
+
+.carousel-itemm {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-family: var(--fontgoldman);
+  border: 1px solid #555;
+  border-radius: calc(var(--outer-r) - var(--p-distance));
+  background-image: linear-gradient(rgba(107, 188, 255, 0.801), transparent);
+  overflow: hidden;
+  cursor: grab;
+  animation: floaty 4s linear infinite;
+}
+
+.carousel-item:active {
+  cursor: grabbing;
+}
+
+.carousel-container.round {
+  border: 1px solid #555;
+}
+
+.carousel-item.round {
+  background-color: #d13535;
+  position: relative;
+  bottom: 0.1em;
+  border: 1px solid #555;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.carousel-item-header.round {
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-indicators-container.round {
+  position: absolute;
+  z-index: 2;
+  bottom: 3em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carousel-indicator.active {
+  background-color: #333333;
+}
+
+.carousel-indicator.inactive {
+  background-color: rgba(51, 51, 51, 0.4);
+}
+
+.carousel-item-header {
+  margin-bottom: 16px;
+  padding: 20px;
+  padding-top: 20px;
+}
+
+.carousel-icon-container {
+  display: flex;
+  height: 28px;
+  width: 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.carousel-icon {
+  height: 16px;
+  width: 16px;
+  color: #120F17;
+}
+
+.soweto
+{
+  margin-top: -40px;
+  cursor: pointer;
+}
+
+.soweto:hover
+{
+  transform: translatey(-20px);
+  transition: 0.6s;
+}
+
+.carousel-item-content {
+  padding: 20px;
+  padding-bottom: 20px;
+}
+
+.carousel-item-title {
+  margin-bottom: 4px;
+  font-weight: 700;
+  font-weight: 400;
+  font-size: 22px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.carousel-item-title:hover
+{
+  text-shadow: 2px 2px 2px black;
+}
+
+
+
+.carousel-item-description {
+  font-size: 13px;
+  color: #fff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 400;
+  margin-top: -10px;
+  letter-spacing: 1.5px;
+}
+
+.carousel-indicators-container {
+  display: flex;
+  width: 100%;
+  margin-top: -60px;
+  position: absolute;
+  justify-self: center;
+  justify-content: center;
+}
+
+.carousel-indicators {
+  margin-top: 16px;
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.carousel-indicator {
+  height: 8px;
+  width: 8px;
+  border: none;
+  padding: 0;
+  appearance: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 150ms;
+}
+
+.carousel-indicator:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.carousel-indicator.active {
+  background-color: #fff;
+}
+
+.carousel-indicator.inactive {
+  background-color: #555;
+}
+

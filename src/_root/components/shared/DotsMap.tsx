@@ -2,39 +2,92 @@ import { useEffect, useRef } from "react";
 import Globe from "react-globe.gl";
 
 const countries = [
+  // Africa
   {
     name: "Kenya",
     lat: -1.286389,
     lng: 36.817223,
-    color: "#00ffff",
+     color: " rgba(96, 179, 247, 0.8) ",
     size: 0.45,
   },
+  {
+    name: "South Africa",
+    lat: -26.2041,
+    lng: 28.0473,
+    color: " rgba(96, 179, 247, 0.8) ",
+    size: 0.4,
+  },
+
+  // North America
   {
     name: "USA",
     lat: 38.9072,
     lng: -77.0369,
-    color: "#00ffff",
+     color: " rgba(96, 179, 247, 0.8) ",
     size: 0.4,
   },
+  {
+    name: "Canada",
+    lat: 45.4215,
+    lng: -75.6972,
+    color: " rgba(96, 179, 247, 0.8) ",
+    size: 0.4,
+  },
+
+  // South America
+  {
+    name: "Brazil",
+    lat: -23.5558,
+    lng: -46.6333,
+     color: " rgba(96, 179, 247, 0.8) ",
+    size: 0.4,
+  },
+  {
+    name: "Chile",
+    lat: -33.4489,
+    lng: -70.6693,
+    color: " rgba(96, 179, 247, 0.8) ",
+    size: 0.4,
+  },
+
+  // Europe
   {
     name: "Germany",
     lat: 52.52,
     lng: 13.405,
-    color:"#00ffff",
+    color: " rgba(96, 179, 247, 0.8) ",
     size: 0.4,
   },
   {
-    name: "Brazil",
-    lat: -15.793889,
-    lng: -47.882778,
-    color: "#00ffff",
+    name: "United Kingdom",
+    lat: 51.5074,
+    lng: -0.1278,
+    color: " rgba(96, 179, 247, 0.8) ",
+    size: 0.4,
+  },
+
+  // Asia
+  {
+    name: "China",
+    lat: 39.9042,
+    lng: 116.4074,
+     color: " rgba(96, 179, 247, 0.8) ",
     size: 0.4,
   },
   {
-    name: "Japan",
-    lat: 35.6762,
-    lng: 139.6503,
-    color:"#00ffff",
+    name: "India",
+    lat: 28.6139,
+    lng: 77.2090,
+    color: " rgba(96, 179, 247, 0.8) ",
+    size: 0.4,
+  },
+
+  // Oceania
+  {
+    name: "Australia",
+    lat: -35.2809,
+    lng: 149.1300,
+     color: " rgba(96, 179, 247, 0.8) ",
     size: 0.4,
   },
 ];
