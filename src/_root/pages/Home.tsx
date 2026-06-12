@@ -1,5 +1,3 @@
-
-import { Link } from "react-router-dom";
 import yuste from "../../../public/assets/bseven-white.png"
 import ScrollStack, { ScrollStackItem } from "../../component/ScrollStack";
 import CardNav from "../../component/CardNav";
