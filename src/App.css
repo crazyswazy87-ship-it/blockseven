@@ -242,7 +242,7 @@ biggie
   border-radius: 20px;
   height: 268px;
   border: none;
-  background: var(ty);
+  background: var(--ty);
   margin-top: -40px;
   display: flex;
   flex-direction: column;
