@@ -249,6 +249,22 @@ biggie
   justify-content: center;
 }
 
+@media (max-width: 1050px) {
+  .umbwakni
+{
+    width: 400px;
+  border-radius: 20px;
+  height: 268px;
+  border: none;
+  background: var(--ty);
+  margin-top: -40px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+
+}
+
 
 
 
@@ -649,7 +665,6 @@ biggie
   }
 }
 
-/*introduction title*/
 /* introduction title */
 
 .obebaba {
@@ -663,11 +678,29 @@ biggie
 
 /* MOBILE */
 
-@media (min-width: 550px) {
+@media (max-width: 750px) {
+  .umbwa
+  {
+    justify-self: center;
+  }
   .obebaba {
     font-weight: 400;
     font-size: 18px;
+    display: none;
   }
+
+  
+.eco-sub {
+  color: rgb(251, 252, 252);
+  text-align: center;
+  font-family: var(--fontgoldman);
+  margin-top: 10px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-size: 16px;
+  display: none;
+}
+
 }
 
 
@@ -907,4 +940,20 @@ biggie
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 1050px) {
+.globe-container {
+  width: 340px;
+  height:320px;
+  margin-top: -75px;
+  position: relative;
+  background-color: transparent;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 }

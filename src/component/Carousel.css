@@ -51,6 +51,34 @@
   justify-content: center;
   
 }
+
+.umbwa-genje
+{
+  width: 400px;
+  border-radius: 20px;
+  height: 268px;
+  border: none;
+  background: transparent;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+@media (max-width: 1050px) {
+  .umbwa-genje
+{
+  width: 400px;
+  border-radius: 20px;
+  height: 268px;
+  border: none;
+  background: transparent;
+  margin-top: 5px;
+  display: none;
+  justify-content: center;
+  
+}
+}
 .carousel-container {
   position: relative;
   overflow: hidden; 

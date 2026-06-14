@@ -21,6 +21,8 @@ import Appwrite from "../../../public/assets/appw.png";
 import AI from "../../../public/assets/aiii.jpg";
 import Carousel from "../../component/Carousel";
 import DotsMap from "../components/shared/DotsMap";
+import FlowingMenu from "../../component/FlowingMenu";
+
 
 const Home = () => {
     /* Animation */
@@ -42,8 +44,8 @@ const Home = () => {
       bgColor: "#08070a",
       textColor: "#fff",
       links: [
-        { label: "Company", ariaLabel: "About Company" },
-        { label: "Careers", ariaLabel: "About Careers" }
+        { label: "Block Seven", ariaLabel: "About Company" },
+        { label: "Crazy Swazy", ariaLabel: "About me" }
       ]
     },
     {
@@ -51,8 +53,10 @@ const Home = () => {
        bgColor: "#08070a",
       textColor: "#fff",
       links: [
-        { label: "Featured", ariaLabel: "Featured Projects" },
-        { label: "Case Studies", ariaLabel: "Project Case Studies" }
+        { label: "Memflix", ariaLabel: "Featured Projects" },
+        { label: "Sheng", ariaLabel: "Project Case Studies" },
+        { label: "Kejani", ariaLabel: "Project Case Studies" },
+        { label: "Components", ariaLabel: "Project Case Studies" }
       ]
     },
     {
@@ -60,9 +64,10 @@ const Home = () => {
       bgColor: "#08070a",
       textColor: "#fff",
       links: [
+        { label: "Memeflix", ariaLabel: "Memeflix" },
+        { label: "Instagram", ariaLabel: "Instagram" },
         { label: "Email", ariaLabel: "Email us" },
         { label: "Twitter", ariaLabel: "Twitter" },
-        { label: "LinkedIn", ariaLabel: "LinkedIn" }
       ]
     }
   ];
@@ -81,6 +86,13 @@ const Home = () => {
   { src: Appwrite, title: "Appwrite", className: "caorosel-image" },
   { src: AI, title: " AI", className: "caorosel-image" },
   { src: Dev, title: "Templates", className: "caorosel-image" },
+];
+
+const demoItems = [
+   { link: '#', text: 'Kenya', image: 'https://i.pinimg.com/736x/d4/b5/be/d4b5be857760143e126e76cb976cb391.jpg' },
+  { link: '#', text: 'Kanairo', image: 'https://i.pinimg.com/736x/3d/a8/13/3da813f35232d5006c2679eb8d3f0cf9.jpg' },
+  { link: '#', text: 'Safari', image: 'https://i.pinimg.com/736x/04/9e/1a/049e1ae543607d239f01b07930103be3.jpg' },
+  { link: '#', text: 'Culture', image: 'https://i.pinimg.com/736x/65/6c/ba/656cbafad109b79a05579ec841beb0a8.jpg' }
 ];
 
 
@@ -183,7 +195,7 @@ const Home = () => {
                     />
                   </div>
 
-                  <span className="umbwa">
+                  <span className="umbwa-genje chingz">
                      {/* ABOUT SECTION */}
                     <motion.section
                       initial="hidden"
@@ -254,10 +266,45 @@ const Home = () => {
                 </div>
               </ScrollStackItem>
               <ScrollStackItem itemClassName="twenty">
-                <h2>Card 3</h2>
-                 COMING SOOner than gta 6
+                <div style={{ height: '600px', position: 'relative' }}>
+                  <FlowingMenu items={demoItems}
+                  speed={57}
+                  textColor="#ffffff"
+                  bgColor="#000000"
+                  marqueeBgColor="#ffffff"
+                  marqueeTextColor="#120F17"
+                  borderColor="#ffffff"
+                />
+                </div>
               </ScrollStackItem>
+            
             </ScrollStack>
+
+         {/*MAMBOTO
+        <motion.div
+          className="tooltip"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >    
+          <div className="">
+            <CircularGallery
+              bend={6}
+              textColor="#ffffff"
+              borderRadius={0.08}
+              scrollEase={0.11}
+              // Optionally load a custom font for the labels.
+              // Accepts a stylesheet URL (e.g. Google Fonts) or a direct font file.
+              fontUrl=""
+              font="bold 30px Orbitron"
+              scrollSpeed={2}
+          />
+          </div>
+        </motion.div>  
+         */}
+
+
+            
         
         <div className="shooting-star"></div>
 
