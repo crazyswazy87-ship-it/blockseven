@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-// use your own icon import if react-icons is not available
 import { GoArrowUpRight } from 'react-icons/go';
-import './CardNav.css';
-import './../App.css';
+import { useNavigate } from 'react-router-dom';
+import ScrollVelocity from './ScrollVelocity';
+import Shuffle from './Shuffle';
 
 type CardNavLink = {
   label: string;
@@ -36,7 +36,7 @@ const CardNav: React.FC<CardNavProps> = ({
   items,
   className = '',
   ease = 'power3.out',
-  baseColor = '#0f040441',
+  baseColor = '#fff',
   menuColor,
   buttonBgColor,
   buttonTextColor
@@ -47,7 +47,18 @@ const CardNav: React.FC<CardNavProps> = ({
   const cardsRef = useRef<HTMLDivElement[]>([]);
   const tlRef = useRef<gsap.core.Timeline | null>(null);
 
+  const handleScroll = (id: string) => {
+  const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const navigate = useNavigate();
+
   const calculateHeight = () => {
+
+    
     const navEl = navRef.current;
     if (!navEl) return 260;
 
@@ -159,7 +170,7 @@ const CardNav: React.FC<CardNavProps> = ({
 
   return (
     <div className={`card-nav-container ${className}`}>
-      <nav ref={navRef} className={`topbar card-nav ${isExpanded ? 'open' : ''}`}  >
+      <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
         <div className="card-nav-top">
           <div
             className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''}`}
@@ -167,37 +178,87 @@ const CardNav: React.FC<CardNavProps> = ({
             role="button"
             aria-label={isExpanded ? 'Close menu' : 'Open menu'}
             tabIndex={0}
-            style={{ color: menuColor || '#000' }}
+            style={{ color: menuColor || '#fff' }}
           >
             <div className="hamburger-line" />
             <div className="hamburger-line" />
           </div>
 
           <div className="logo-container">
-            <img src={logo} alt={logoAlt} className="logoo" />
-            <span className='miristaa'>
-              Block Seven
-            </span>
+            <img
+              src={logo}
+              alt={logoAlt}
+              className="logo"
+              onClick={() => navigate("/wolfgng")}
+              style={{ cursor: "pointer" }}
+            />
           </div>
+
+          {/** 
+          <div className='brdays'>
+            <ScrollVelocity
+              texts={['Block Seven', 'Explore Beyond']} 
+              velocity={50}
+              className="custom-scroll-text"
+              numCopies={4}
+              damping={70}
+              stiffness={750}
+            />
+          </div>
+            */}
 
           <button
             type="button"
-            className="card-nav-cta-button"
+            onClick={() => handleScroll("contact")}
+            className="card-nav-cta-button  "
             style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
           >
-            Explore Beyond
+            Join the Ecosystem
           </button>
+          
         </div>
 
         <div className="card-nav-content" aria-hidden={!isExpanded}>
           {(items || []).slice(0, 3).map((item, idx) => (
             <div
-              key={`${item.label}-${idx}`}
-              className="nav-card"
-              ref={setCardRef(idx)}
-              style={{ backgroundColor: item.bgColor, color: item.textColor }}
-            >
-              <div className="nav-card-label">{item.label}</div>
+                key={`${item.label}-${idx}`}
+                className="nav-card btn-grad whiteblue"
+                ref={setCardRef(idx)}
+                onClick={() => {
+                  const section = document.getElementById(item.target);
+
+                  if (section) {
+                    section.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }
+
+                  setIsHamburgerOpen(false);
+                  tlRef.current?.reverse();
+                }}
+                style={{
+                  backgroundColor: item.bgColor,
+                  color: item.textColor,
+                  cursor: "pointer"
+                }}
+              >
+              <Shuffle
+              text={item.label}
+              shuffleDirection="down"
+              duration={0.35}
+              animationMode="evenodd"
+              shuffleTimes={1}
+              ease="power2.out"
+              stagger={0.09}
+              threshold={0.1}
+              triggerOnce={true}
+              triggerOnHover
+              respectReducedMotion={true}
+              loop={false}
+              loopDelay={0}
+              className="nav-card-label"
+            />
               <div className="nav-card-links">
                 {item.links?.map((lnk, i) => (
                   <a key={`${lnk.label}-${i}`} className="nav-card-link" href={lnk.href} aria-label={lnk.ariaLabel}>
