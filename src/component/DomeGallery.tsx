@@ -2,6 +2,20 @@ import { useEffect, useMemo, useRef, useCallback } from 'react';
 import { useGesture } from '@use-gesture/react';
 
 
+import Domain from "../../public/assets/do.jpg";
+import Css from "../../public/assets/css.jpg";
+import Git from "../../public/assets/git.jpg";
+import ReactImg from "../../public/assets/react.jpg";
+import Html from "../../public/assets/html.jpg";
+import Javascript from "../../public/assets/js.jpg";
+import Codex from "../../public/assets/ap.jpg";
+import Gitt from "../../public/assets/gittt.jpg";
+import Dev from "../../public/assets/dev.jpg";
+import Ts from "../../public/assets/ts.png";
+import Vercel from "../../public/assets/verc.jpg";
+import Appwrite from "../../public/assets/appw.png";
+import AI from "../../public/assets/aiii.jpg";
+
 type ImageItem = string | { src: string; alt?: string };
 
 type DomeGalleryProps = {
@@ -35,33 +49,57 @@ type ItemDef = {
 
 const DEFAULT_IMAGES: ImageItem[] = [
   {
-    src: 'https://images.unsplash.com/photo-1755331039789-7e5680e26e8f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    src: Domain,
     alt: 'Abstract art'
   },
   {
-    src: 'https://images.unsplash.com/photo-1755569309049-98410b94f66d?q=80&w=772&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    src: Css,
     alt: 'Modern sculpture'
   },
   {
-    src: 'https://images.unsplash.com/photo-1755497595318-7e5e3523854f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Digital artwork'
+    src: Git,
+    alt: 'B7'
   },
   {
-    src: 'https://images.unsplash.com/photo-1755353985163-c2a0fe5ac3d8?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Contemporary art'
+    src: ReactImg,
+    alt: 'B7'
   },
   {
-    src: 'https://images.unsplash.com/photo-1745965976680-d00be7dc0377?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Geometric pattern'
+    src: Html,
+    alt: 'B7'
   },
   {
-    src: 'https://images.unsplash.com/photo-1752588975228-21f44630bb3c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Textured surface'
+    src: Javascript,
+    alt: 'B7'
   },
   {
-    src: 'https://pbs.twimg.com/media/Gyla7NnXMAAXSo_?format=jpg&name=large',
-    alt: 'Social media image'
-  }
+    src: Codex,
+    alt: 'B7'
+  },
+  {
+    src: Gitt,
+    alt: 'B7'
+  },
+  {
+    src: Dev,
+    alt: 'B7'
+  },
+  {
+    src: Ts,
+    alt: 'B7'
+  },
+  {
+    src: Vercel,
+    alt: 'B7'
+  },
+  {
+    src: Appwrite,
+    alt: 'B7'
+  },
+  {
+    src: AI,
+    alt: 'B7'
+  },
 ];
 
 const DEFAULTS = {
@@ -745,9 +783,8 @@ export default function DomeGallery({
         </div>
 
         <div className="overlay" />
-        <div className="overlay overlay--blur" />
-        <div className="edge-fade edge-fade--top" />
-        <div className="edge-fade edge-fade--bottom" />
+       
+        
 
         <div className="viewer" ref={viewerRef}>
           <div ref={scrimRef} className="scrim" />
