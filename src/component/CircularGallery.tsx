@@ -1,6 +1,9 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl';
 import { useEffect, useRef } from 'react';
 
+import nichImg from "../../public/assets/memeflix-icon.jpg"
+import ujImg from "../../public/assets/memeflix-icon1.jpg"
+
 import './CircularGallery.css';
 
 type GL = Renderer['gl'];
@@ -574,52 +577,40 @@ class App {
   ) {
     const defaultItems = [
       {
-        image: `https://picsum.photos/seed/1/800/600?grayscale`,
-        text: 'Bridge'
+        image: nichImg,
+        text: 'Sheng'
       },
       {
-        image: `https://picsum.photos/seed/2/800/600?grayscale`,
-        text: 'Desk Setup'
+        image: nichImg,
+        text: 'Memeflix'
       },
       {
-        image: `https://picsum.photos/seed/3/800/600?grayscale`,
-        text: 'Waterfall'
+        image: ujImg,
+        text: 'Kejani'
       },
       {
-        image: `https://picsum.photos/seed/4/800/600?grayscale`,
-        text: 'Strawberries'
+        image: nichImg,
+        text: 'Tripple C'
       },
       {
-        image: `https://picsum.photos/seed/5/800/600?grayscale`,
-        text: 'Deep Diving'
+        image: ujImg,
+        text: 'Mashuksha'
       },
       {
-        image: `https://picsum.photos/seed/16/800/600?grayscale`,
-        text: 'Train Track'
+        image: nichImg,
+        text: 'Asap'
       },
       {
-        image: `https://picsum.photos/seed/17/800/600?grayscale`,
-        text: 'Santorini'
+        image: ujImg,
+        text: 'migpt'
       },
       {
-        image: `https://picsum.photos/seed/8/800/600?grayscale`,
-        text: 'Blurry Lights'
+        image: nichImg,
+        text: 'B7'
       },
       {
-        image: `https://picsum.photos/seed/9/800/600?grayscale`,
-        text: 'New York'
-      },
-      {
-        image: `https://picsum.photos/seed/10/800/600?grayscale`,
-        text: 'Good Boy'
-      },
-      {
-        image: `https://picsum.photos/seed/21/800/600?grayscale`,
-        text: 'Coastline'
-      },
-      {
-        image: `https://picsum.photos/seed/12/800/600?grayscale`,
-        text: 'Palm Trees'
+        image: ujImg,
+        text: 'Spotlight'
       }
     ];
     const galleryItems = items && items.length ? items : defaultItems;

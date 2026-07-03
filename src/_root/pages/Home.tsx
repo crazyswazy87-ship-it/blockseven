@@ -35,8 +35,14 @@ import AI from "../../../public/assets/aiii.jpg";
 import Magnet from "../../component/Magnet";
 //import Folder from "../../component/Folder";
 import DomeGallery from "../../component/DomeGallery";
+import PixelTransition from "../../component/PixelTransition";
 //import DotsMap from "../components/shared/DotsMap";
 //import MagicBento from "../../component/MagicBento";
+
+import pakapawa from "../../../public/assets/Franklin Saint.jpeg"
+import CircularGallery from "../../component/CircularGallery";
+import RotatingText from "../../component/RotatingText";
+import CircularText from "../../component/CircularText";
 
 
 
@@ -74,10 +80,22 @@ const itemsz = [
 
   //Flowing Menu
 const demoItems = [
-   { link: '/', text: 'Kenya', image: 'https://i.pinimg.com/736x/d4/b5/be/d4b5be857760143e126e76cb976cb391.jpg' },
-  { link: '/', text: 'Nairobi', image: 'https://i.pinimg.com/736x/3d/a8/13/3da813f35232d5006c2679eb8d3f0cf9.jpg' },
-  { link: '/', text: 'Safari', image: 'https://i.pinimg.com/736x/04/9e/1a/049e1ae543607d239f01b07930103be3.jpg' },
-  { link: '/', text: 'Culture', image: 'https://i.pinimg.com/736x/65/6c/ba/656cbafad109b79a05579ec841beb0a8.jpg' }
+  {
+    text: "Kenya",
+    image: "https://i.pinimg.com/736x/d4/b5/be/d4b5be857760143e126e76cb976cb391.jpg"
+  },
+  {
+    text: "Nairobi",
+    image: "https://i.pinimg.com/736x/3d/a8/13/3da813f35232d5006c2679eb8d3f0cf9.jpg"
+  },
+  {
+    text: "Safari",
+    image: "https://i.pinimg.com/736x/04/9e/1a/049e1ae543607d239f01b07930103be3.jpg"
+  },
+  {
+    text: "Culture",
+    image: "https://i.pinimg.com/736x/65/6c/ba/656cbafad109b79a05579ec841beb0a8.jpg"
+  }
 ];
 
 
@@ -281,6 +299,7 @@ const imageLogos = [
     >
       About Us
     </ScrollFloat>
+
 
      {/*Shiny Text 
       <ShinyText
@@ -493,6 +512,114 @@ const imageLogos = [
 
       
     </div>
+
+     <div 
+      className="jenita">
+      {/*Rotate Text */}
+      {/*Shiny Text */}
+      <ShinyText
+        text="I'm Wayne Okoth"
+        speed={5}
+        delay={0}
+        color="#fff"
+        shineColor="#51aaf9"
+        spread={120}
+        direction="left"
+        yoyo={false}
+        pauseOnHover
+        disabled={false}
+        className="katanisha"
+      />
+
+      <RotatingText
+        texts={['I', 'CREATE', '3D' , 'WEBSITES','AM THE','FOUNDER', 'AND' , 'CEO', 'OF', 'BLOCK 7']}
+        mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+        staggerFrom="last"
+        initial={{ y: "100%" }}
+        animate={{ y: 0 }}
+        exit={{ y: "-120%" }}
+        staggerDuration={0.025}
+        splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+        transition={{ type: "spring", damping: 30, stiffness: 400 }}
+        rotationInterval={1900}
+        splitBy="characters"
+        auto
+        loop={false}
+        className="safisha"
+      />
+    </div>
+
+    <section id="swazy" className="konda">
+    {/*PixelTransition */}
+    <PixelTransition
+      firstContent={
+        <img
+          src={pakapawa}
+          alt="crazyswazy"
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
+      }
+      secondContent={
+        <div
+        className="survival">
+          {/*circular text*/}
+          <CircularText
+            text="**NEED**A**WEBSITE?**"
+            onHover="speedUp"
+            spinDuration={20}
+            className="custom-class"
+          />
+          <p className="domani">
+            <span className="tipsi">
+              i'd be happy to help
+              you get one today
+            </span>
+          </p>
+        </div>
+      }
+      gridSize={8}
+      pixelColor="#ffffff"
+      once={false}
+      animationStepDuration={0.4}
+      className="custom-pixel-card"
+    />
+
+      <button 
+        onClick={() => handleScroll("contact")}
+        className="btn-grad">
+        Reach out
+      </button>
+    </section>
+    
+    <section id="ecosystem" style={{ height: '500px', position: 'relative' }}>
+      {/*Shiny Text */}
+      <ShinyText
+        text="Our Ecosystem"
+        speed={5}
+        delay={0}
+        color="#fff"
+        shineColor="#51aaf9"
+        spread={120}
+        direction="left"
+        yoyo={false}
+        pauseOnHover
+        disabled={false}
+        className="uzi"
+      />
+
+      <CircularGallery
+        bend={1}
+        textColor="#ffffff"
+        borderRadius={0.05}
+        scrollEase={0.05}
+        // Optionally load a custom font for the labels.
+        // Accepts a stylesheet URL (e.g. Google Fonts) or a direct font file.
+        fontUrl=""
+        font="bold 30px Orbitron"
+        scrollSpeed={3}
+    />
+    </section>
+
 
     {/*Magic Bento
     <MagicBento 

@@ -16,7 +16,13 @@ import Vercel from "../../public/assets/verc.jpg";
 import Appwrite from "../../public/assets/appw.png";
 import AI from "../../public/assets/aiii.jpg";
 
-type ImageItem = string | { src: string; alt?: string };
+type ImageItem =
+  | string
+  | {
+      src: string;
+      alt?: string;
+      name: string;
+    };
 
 type DomeGalleryProps = {
   images?: ImageItem[];
@@ -41,6 +47,7 @@ type DomeGalleryProps = {
 type ItemDef = {
   src: string;
   alt: string;
+  name: string;
   x: number;
   y: number;
   sizeX: number;
@@ -50,56 +57,69 @@ type ItemDef = {
 const DEFAULT_IMAGES: ImageItem[] = [
   {
     src: Domain,
-    alt: 'Abstract art'
+    alt: "domain",
+    name: "Domain Management"
   },
   {
     src: Css,
-    alt: 'Modern sculpture'
+    alt: "css",
+    name: "CSS3 Styling"
   },
   {
     src: Git,
-    alt: 'B7'
+    alt: "git",
+    name: "Git Version Control"
   },
   {
     src: ReactImg,
-    alt: 'B7'
+    alt: "react",
+    name: "React Development"
   },
   {
     src: Html,
-    alt: 'B7'
+    alt: "html",
+    name: "HTML5"
   },
   {
     src: Javascript,
-    alt: 'B7'
+    alt: "javascript",
+    name: "JavaScript"
   },
   {
     src: Codex,
-    alt: 'B7'
+    alt: "codex",
+    name: "OpenAI APIs"
   },
   {
     src: Gitt,
-    alt: 'B7'
+    alt: "gitt",
+    name: "GitHub"
   },
   {
     src: Dev,
-    alt: 'B7'
+    alt: "dev",
+    name: "Full Stack"
   },
   {
     src: Ts,
-    alt: 'B7'
+    alt: "typescript",
+    name: "TypeScript"
   },
   {
     src: Vercel,
-    alt: 'B7'
+    alt: "vercel",
+    name: "Vercel Deployments"
   },
   {
     src: Appwrite,
-    alt: 'B7'
+    alt: "appwrite",
+    name: "Appwrite Backend"
   },
   {
     src: AI,
-    alt: 'B7'
-  },
+    alt: "artificial intelligence",
+    name: "Artificial Intelligence"
+  }
 ];
 
 const DEFAULTS = {
@@ -145,7 +165,11 @@ function buildItems(pool: ImageItem[], seg: number): ItemDef[] {
     if (typeof image === 'string') {
       return { src: image, alt: '' };
     }
-    return { src: image.src || '', alt: image.alt || '' };
+    return {
+      src: image.src || "",
+      alt: image.alt || "",
+      name: image.name || ""
+    };
   });
 
   const usedImages = Array.from({ length: totalSlots }, (_, i) => normalizedImages[i % normalizedImages.length]);
@@ -164,10 +188,11 @@ function buildItems(pool: ImageItem[], seg: number): ItemDef[] {
   }
 
   return coords.map((c, i) => ({
-    ...c,
-    src: usedImages[i].src,
-    alt: usedImages[i].alt
-  }));
+  ...c,
+  src: usedImages[i].src,
+  alt: usedImages[i].alt,
+  name: usedImages[i].name
+}));
 }
 
 function computeItemBaseRotation(offsetX: number, offsetY: number, sizeX: number, sizeY: number, segments: number) {
@@ -505,9 +530,16 @@ export default function DomeGallery({
     overlay.style.transition = `transform ${enlargeTransitionMs}ms ease, opacity ${enlargeTransitionMs}ms ease`;
 
     const rawSrc = parent.dataset.src || (el.querySelector('img') as HTMLImageElement)?.src || '';
+    const imageName = parent.dataset.name || '';
     const img = document.createElement('img');
     img.src = rawSrc;
     overlay.appendChild(img);
+
+    const title = document.createElement('div');
+      title.className = 'viewer-title';
+      title.textContent = imageName;
+
+      overlay.appendChild(title);
     viewerRef.current!.appendChild(overlay);
 
     const tx0 = tileR.left - frameR.left;
@@ -754,6 +786,7 @@ export default function DomeGallery({
                 key={`${it.x},${it.y},${i}`}
                 className="item"
                 data-src={it.src}
+                data-name={it.name}
                 data-offset-x={it.x}
                 data-offset-y={it.y}
                 data-size-x={it.sizeX}
@@ -776,6 +809,9 @@ export default function DomeGallery({
                   onPointerUp={onTilePointerUp}
                 >
                   <img src={it.src} draggable={false} alt={it.alt} />
+                  <span className='kismart'>
+                    {it.name}
+                  </span>
                 </div>
               </div>
             ))}

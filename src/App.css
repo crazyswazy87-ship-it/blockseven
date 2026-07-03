@@ -408,7 +408,7 @@ body{
   height: 120px;
   margin-top: 30px;
   background-color: transparent;
-  color: rgb(201, 162, 75);
+  color: var(--graduation);
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -424,7 +424,7 @@ body{
   height: 100px;
   margin-top: 80px;
   background-color: transparent;
-  color: rgb(201, 162, 75);
+  color: var(--graduation);
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -448,7 +448,7 @@ body{
   background:
   linear-gradient(
     rgba(0,0,0,.7) 30%,
-      rgb(201, 162, 75)
+       rgba(107, 188, 255, 0.801)
   );
   padding: 10px;
   width: 250px;
@@ -745,6 +745,11 @@ body{
   flex-direction: column;
   align-items: center;
   z-index: 1;
+}
+
+.tipsi 
+{
+  width: 100%;
 }
 
 .elon
@@ -2363,7 +2368,7 @@ FROM BITH
   border-radius: 20px;
   cursor: pointer;
   overflow: hidden;
-  border: 1px solid red;
+  border: 1px solid var(--graduation);
 }
 
 .border-gradient-bottom {
@@ -2586,6 +2591,43 @@ FROM BITH
 .item,
 .item__image {
   transform-style: preserve-3d;
+}
+
+.item__image{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.kismart{
+    margin-top:10px;
+    color:#fff;
+    font-size:14px;
+    font-weight:600;
+    text-align:center;
+    width:100%;
+    text-shadow:0 2px 8px rgba(0,0,0,.8);
+    pointer-events:none;
+}
+
+.viewer-title {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+
+  padding: 10px 18px;
+  border-radius: 12px;
+
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+
+  z-index: 5;
 }
 
 main.sphere-main {
@@ -2965,4 +3007,97 @@ main.sphere-main {
 .bento-section {
   position: relative;
   user-select: none;
+}
+
+
+/*pixel transition*/
+.pixelated-image-card {
+  background-color: #070606;
+  color: #fff;
+  border-radius: 15px;
+  border: 2px solid var(--graduation);
+  width: 300px;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.survival
+{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: black;
+
+}
+
+.konda
+{
+  background-color: transparent;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width:1280px ) {
+  .konda
+{
+  background-color: transparent;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+}
+
+.domani
+{
+  font-size: 19px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.pixelated-image-card__default,
+.pixelated-image-card__active,
+.pixelated-image-card__pixels {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pixelated-image-card__active {
+  z-index: 2;
+}
+
+.pixelated-image-card__active {
+  display: none;
+}
+
+.pixelated-image-card__pixels {
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pixelated-image-card__pixel {
+  display: none;
+  position: absolute;
 }

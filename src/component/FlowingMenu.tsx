@@ -4,7 +4,6 @@ import { gsap } from 'gsap';
 import './FlowingMenu.css';
 
 interface MenuItemData {
-  link: string;
   text: string;
   image: string;
 }
@@ -58,7 +57,6 @@ const FlowingMenu: React.FC<FlowingMenuProps> = ({
 };
 
 const MenuItem: React.FC<MenuItemProps> = ({
-  link,
   text,
   image,
   speed,
@@ -164,7 +162,6 @@ const MenuItem: React.FC<MenuItemProps> = ({
     <div className="menu__item" ref={itemRef} style={{ borderColor, borderTop: isFirst ? 'none' : undefined }}>
       <a
         className="menu__item-link"
-        href={link}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         style={{ color: textColor }}

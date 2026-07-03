@@ -416,7 +416,7 @@ const demoItems = [
 
       
     </section>
-
+      
       <div 
       className="jenita">
       {/*Rotate Text */}
