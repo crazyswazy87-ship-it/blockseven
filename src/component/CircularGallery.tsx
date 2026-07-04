@@ -611,7 +611,11 @@ class App {
       {
         image: ujImg,
         text: 'Spotlight'
-      }
+      },
+      {
+        image: nichImg,
+        text: 'Doba'
+      },
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);

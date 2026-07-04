@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import logo from "../../../public/assets/bseven-white.png"
-//import bra from "../../../public/assets/bseven-white.png"
-//import sub from "../../../public/assets/bseven-black.png"
-import { useNavigate } from "react-router-dom";
+import bs from "../../../public/assets/bseven-white.png"
+import sub from "../../../public/assets/bseven-black.png"
+import { Link } from "react-router-dom";
 //import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import CardNav from "../../component/CardNav";
 import ShinyText from "../../component/ShinyText";
@@ -15,7 +15,7 @@ import FlowingMenu from "../../component/FlowingMenu";
 import Shuffle from "../../component/Shuffle";
 import MagicRings from "../../component/MagicRings";
 import ScrollVelocity from "../../component/ScrollVelocity";
-//import LogoLoop from "../../component/LogoLoop";
+//import TextPressure from "../../component/TextPressure";
 //import InfiniteCarousel from "../components/shared/InfiniteCarousel";
 
 import Domain from "../../../public/assets/do.jpg";
@@ -43,6 +43,8 @@ import pakapawa from "../../../public/assets/Franklin Saint.jpeg"
 import CircularGallery from "../../component/CircularGallery";
 import RotatingText from "../../component/RotatingText";
 import CircularText from "../../component/CircularText";
+import ScrollStack, { ScrollStackItem } from "../../component/ScrollStack";
+import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 
 
@@ -56,7 +58,7 @@ const Home = () => {
   }
 };
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
    //variable proximity
  //const containerRef = useRef(null);
 
@@ -100,29 +102,13 @@ const demoItems = [
 
 
 
-//Logo Loop
-const imageLogos = [
-  { src: Domain, alt: "Hostig", href: "#" },
-  { src: Css, alt: "Css", href: "#" },
-  { src: Git, alt: "Git", href: "#" },
-  { src: ReactImg, alt: "React", href: "#" },
-  { src: Html, alt: "HTML", href:"#"},
-  { src: Javascript, alt: "Java Script", href:"#"},
-  { src: Codex, alt: "Codex", href:"#"},
-  { src: Gitt, alt: "Version Control", href:"#"},
-  { src: Ts, alt: "Typescript", href:"#"},
-  { src: Vercel, alt: "Vercel", href:"#"},
-  { src: Appwrite, alt: "Appwrite", href:"#"},
-  { src: AI, alt: "Atificial Inteligence", href:"#"},
-  { src: Dev, alt: "Templates", href:"#"}
-];
 
 
 
 
   return (
   <div className="home-container">
-  <section 
+   <section 
     className="hero">
 
     {/*card nav */}
@@ -209,14 +195,14 @@ const imageLogos = [
         <motion.div>
          <button 
           className="btn-grad"
-          onClick={() => navigate("/")}>
+          onClick={() => handleScroll("beyond")}>
             Explore beyond
           </button>
         </motion.div>
 
         <motion.div>
          <button 
-          onClick={() => handleScroll("contact")}
+          onClick={() => handleScroll("ecosystem")}
           className="btn-grad">
             B7 Ecosystem
          </button>
@@ -532,7 +518,7 @@ const imageLogos = [
       />
 
       <RotatingText
-        texts={['I', 'CREATE', '3D' , 'WEBSITES','AM THE','FOUNDER', 'AND' , 'CEO', 'OF', 'BLOCK 7']}
+        texts={['I CREATE', '3D WEBSITES','AM THE','FOUNDER', 'AND CEO', 'OF', 'BLOCK 7']}
         mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
         staggerFrom="last"
         initial={{ y: "100%" }}
@@ -541,7 +527,7 @@ const imageLogos = [
         staggerDuration={0.025}
         splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
         transition={{ type: "spring", damping: 30, stiffness: 400 }}
-        rotationInterval={1900}
+        rotationInterval={4000}
         splitBy="characters"
         auto
         loop={false}
@@ -610,18 +596,33 @@ const imageLogos = [
       <CircularGallery
         bend={1}
         textColor="#ffffff"
-        borderRadius={0.05}
-        scrollEase={0.05}
-        // Optionally load a custom font for the labels.
-        // Accepts a stylesheet URL (e.g. Google Fonts) or a direct font file.
+        borderRadius={0.10}
+        scrollEase={0.10}
         fontUrl=""
         font="bold 30px Orbitron"
-        scrollSpeed={3}
+        scrollSpeed={4}
     />
+
+    
     </section>
+    
+    <section id='beyond' className="tyla">
+      {/*Shiny Text */}
+      <ShinyText
+        text="Explore Beyond WITH US"
+        speed={5}
+        delay={0}
+        color="#fff"
+        shineColor="#51aaf9"
+        spread={120}
+        direction="left"
+        yoyo={false}
+        pauseOnHover
+        disabled={false}
+        className="uzi"
+      />
 
-
-    {/*Magic Bento
+    {/*Magic Bento 
     <MagicBento 
       textAutoHide={true}
       enableStars
@@ -635,7 +636,260 @@ const imageLogos = [
       glowColor="132, 0, 255"
       disableAnimations={false}
     />
-     */}
+    */}
+
+    {/*Scroll Stack */}
+      <ScrollStack>
+        <ScrollStackItem itemClassName="elon">
+          <h2 className="dissme">What Our Customers Say</h2>
+          
+          <div className="moto">
+
+          <div className="zuck">
+            <div className="yolo">
+              ⭐ ⭐ ⭐ ⭐ ⭐
+            </div>
+            <div className="meso">
+              Got myself a wolfGNG stweatshirt, 
+              its very reliable & affordable
+            </div>
+            <div className="maja">
+              <div className="msee oo">
+                SM
+              </div>
+              <div className="rates">
+                <span className="bombo">Simon Mwangi</span>
+                <span className="alaine">Customer</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="zuck">
+            <div className="yolo">
+              ⭐ ⭐ ⭐ ⭐ 
+            </div>
+            <div className="meso">
+              Comfortable enough for everyday wear and 
+              stylish enough to turn heads. Worth every shilling
+            </div>
+            <div className="maja">
+              <div className="msee ii">
+                AK
+              </div>
+              <div className="rates">
+                <span className="bombo">Abdul Karim</span>
+                <span className="alaine">Pack member</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="zuck">
+            <div className="yolo">
+              ⭐ ⭐ ⭐ ⭐ ⭐
+            </div>
+            <div className="meso">
+               I've washed it
+               multiple times and it still looks brand new
+            </div>
+            <div className="maja">
+              <div className="msee pp">
+                YS
+              </div>
+              <div className="rates">
+                <span className="bombo">Young Sido</span>
+                <span className="alaine">Pack Member</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="zuck">
+            <div className="yolo">
+              ⭐ ⭐ ⭐ ⭐ 
+            </div>
+            <div className="meso">
+              The design stands out without trying too hard
+            </div>
+            <div className="maja">
+              <div className="msee aa">
+                YA
+              </div>
+              <div className="rates">
+                <span className="bombo">Yassin Adam</span>
+                <span className="alaine">Customer</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="zuck">
+            <div className="yolo">
+              ⭐ ⭐ ⭐ 
+            </div>
+            <div className="meso">
+              The fabric feels premium,
+              and I've received so many compliments whenever I wear it
+            </div>
+            <div className="maja">
+              <div className="msee ii">
+                NO
+              </div>
+              <div className="rates">
+                <span className="bombo">Nancy Onyango</span>
+                <span className="alaine">Pack member</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="zuck">
+            <div className="yolo">
+              ⭐ ⭐ ⭐ ⭐ 
+            </div>
+            <div className="meso">
+              It's more than apparel it's a community
+            </div>
+            <div className="maja">
+              <div className="msee aa">
+                AK
+              </div>
+              <div className="rates">
+                <span className="bombo">Abdul Karim</span>
+                <span className="alaine">Pack member</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="zuck">
+            <div className="yolo">
+              ⭐ ⭐ ⭐ ⭐ ⭐ 
+            </div>
+            <div className="meso">
+              Every time I wear WolfGNG, I feel confident and motivated
+            </div>
+            <div className="maja">
+              <div className="msee ss">
+                KK
+              </div>
+              <div className="rates">
+                <span className="bombo">Kairo Khalif</span>
+                <span className="alaine">Customer</span>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+        </ScrollStackItem>
+
+        <ScrollStackItem 
+          itemClassName="kamala">
+        <section id="contact" className="kamala">
+          <h2 className="psycho">Join our ecosystems</h2>
+           {/*Shiny Text */}
+      <ShinyText
+        text="Be among the first to explore our new apps & websites"
+        speed={5}
+        delay={0}
+        color="#fff"
+        shineColor="#293138"
+        spread={120}
+        direction="left"
+        yoyo={false}
+        pauseOnHover
+        disabled={false}
+        className="psycho"
+      />
+
+          <input
+            type="name"
+            required
+            className="mcfullstop"
+            placeholder="Enter your name"
+          />
+
+          <input
+            type=""
+            required
+            className="mcfullstop"
+            placeholder="Enter your Email or Phone"
+          />
+
+          <button
+            type="submit"
+            onClick={() => {}}
+            className="btn-grad bundi"
+          >
+              <img
+                src={sub}
+                alt="wolfy"
+                height={40}
+                className="mwitu"
+              />
+          </button>
+        </section>
+        </ScrollStackItem>
+
+        <ScrollStackItem itemClassName="trump">
+          <Link to={'/andime'}>
+          <img 
+            src={bs}
+            alt="Bloc 7"
+            width={100}
+            className="madem"
+          />
+          </Link>
+
+          <Link 
+            to={'#'}
+            className="poli"
+            >© 2026 BLOCK SEVEN</Link>
+          <Link 
+            to={'#'}
+            className="poli"
+            >Terms & Conditions</Link>
+          <Link 
+            to={'#'}
+            className="poli"
+            >Jobs</Link>
+          <Link 
+            to={'#'}
+            className="poli"
+            >Powered by BlockSeven</Link>
+          
+        </ScrollStackItem>
+
+        <section id="socials" className="wawili">
+
+        <div className="quen">
+        <a
+          href="https://www.instagram.com/wolf_gng5?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          className="text-white text-2xl hover:scale-110 transition-all duration-300"
+        >
+          <FaInstagram />
+        </a>
+        </div>
+
+        <div className="quen">
+        <a
+          href="https://api.whatsapp.com/send?phone=254722541890"
+          className="text-white text-2xl hover:scale-110 transition-all duration-300"
+        >
+          <FaWhatsapp />
+        </a>
+        </div>
+
+        <div className="quen">
+        <a
+          href="https://www.tiktok.com/@mrabdiadan?is_from_webapp=1&sender_device=pc"
+          className="text-white text-2xl hover:scale-110 transition-all duration-300"
+        >
+          <FaTiktok />
+        </a>
+        </div>
+
+      </section>
+
+      </ScrollStack>
+    </section>
+
    
   </div>
 
