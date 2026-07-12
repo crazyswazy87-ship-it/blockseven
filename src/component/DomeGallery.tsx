@@ -2,19 +2,19 @@ import { useEffect, useMemo, useRef, useCallback } from 'react';
 import { useGesture } from '@use-gesture/react';
 
 
-import Domain from "../../public/assets/do.jpg";
-import Css from "../../public/assets/css.jpg";
-import Git from "../../public/assets/git.jpg";
-import ReactImg from "../../public/assets/react.jpg";
-import Html from "../../public/assets/html.jpg";
-import Javascript from "../../public/assets/js.jpg";
-import Codex from "../../public/assets/ap.jpg";
-import Gitt from "../../public/assets/gittt.jpg";
-import Dev from "../../public/assets/dev.jpg";
-import Ts from "../../public/assets/ts.png";
-import Vercel from "../../public/assets/verc.jpg";
-import Appwrite from "../../public/assets/appw.png";
-import AI from "../../public/assets/aiii.jpg";
+import Domain from "../../public/assets/images/do.jpg";
+import Css from "../../public/assets/images/css.jpg";
+import Git from "../../public/assets/images/git.jpg";
+import ReactImg from "../../public/assets/images/react.jpg";
+import Html from "../../public/assets/images/html.jpg";
+import Javascript from "../../public/assets/images/js.jpg";
+import Codex from "../../public/assets/images/ap.jpg";
+import Gitt from "../../public/assets/images/gittt.jpg";
+import Dev from "../../public/assets/images/dev.jpg";
+import Ts from "../../public/assets/images/ts.png";
+import Vercel from "../../public/assets/images/verc.jpg";
+import Appwrite from "../../public/assets/images/appw.png";
+import AI from "../../public/assets/images/aiii.jpg";
 
 type ImageItem =
   | string

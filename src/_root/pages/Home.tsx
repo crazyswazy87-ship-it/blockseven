@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import logo from "../../../public/assets/bseven-white.png"
-import bs from "../../../public/assets/bseven-white.png"
-import sub from "../../../public/assets/bseven-black.png"
+import logo from "../../../public/assets/images/bseven-white.png"
+import bs from "../../../public/assets/images/bseven-white.png"
+import sub from "../../../public/assets/images/bseven-black.png"
 import { Link } from "react-router-dom";
 //import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import CardNav from "../../component/CardNav";
@@ -18,19 +18,7 @@ import ScrollVelocity from "../../component/ScrollVelocity";
 //import TextPressure from "../../component/TextPressure";
 //import InfiniteCarousel from "../components/shared/InfiniteCarousel";
 
-import Domain from "../../../public/assets/do.jpg";
-import Css from "../../../public/assets/css.jpg";
-import Git from "../../../public/assets/git.jpg";
-import ReactImg from "../../../public/assets/react.jpg";
-import Html from "../../../public/assets/html.jpg";
-import Javascript from "../../../public/assets/js.jpg";
-import Codex from "../../../public/assets/ap.jpg";
-import Gitt from "../../../public/assets/gittt.jpg";
-import Dev from "../../../public/assets/dev.jpg";
-import Ts from "../../../public/assets/ts.png";
-import Vercel from "../../../public/assets/verc.jpg";
-import Appwrite from "../../../public/assets/appw.png";
-import AI from "../../../public/assets/aiii.jpg";
+
 //import StarBorder from "../../component/StarBorder";
 import Magnet from "../../component/Magnet";
 //import Folder from "../../component/Folder";
@@ -39,7 +27,7 @@ import PixelTransition from "../../component/PixelTransition";
 //import DotsMap from "../components/shared/DotsMap";
 //import MagicBento from "../../component/MagicBento";
 
-import pakapawa from "../../../public/assets/Franklin Saint.jpeg"
+import pakapawa from "../../../public/assets/images/Franklin Saint.jpeg"
 import CircularGallery from "../../component/CircularGallery";
 import RotatingText from "../../component/RotatingText";
 import CircularText from "../../component/CircularText";
@@ -185,9 +173,9 @@ const demoItems = [
       />
 
       <h1>
-        INSPIRED BY THE FEAR
+        THINK GLOBALLY
         <br />
-        OF BEING AVERAGE
+        ACT LOCALLY
       </h1>
 
 
@@ -272,6 +260,7 @@ const demoItems = [
       dragDampening={2}
       grayscale
     />
+    
 
 
     {/*Scroll Float */}

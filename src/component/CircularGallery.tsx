@@ -1,8 +1,9 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl';
 import { useEffect, useRef } from 'react';
 
-import nichImg from "../../public/assets/memeflix-icon.jpg"
-import ujImg from "../../public/assets/memeflix-icon1.jpg"
+import nichImg from "../../public/assets/images/memeflix-icon.jpg"
+import ujImg from "../../public/assets/images/memeflix-icon1.jpg"
+import shengImg from "../../public/assets/images/sheng.png"
 
 import './CircularGallery.css';
 
@@ -577,7 +578,7 @@ class App {
   ) {
     const defaultItems = [
       {
-        image: nichImg,
+        image: shengImg,
         text: 'Sheng'
       },
       {
@@ -590,15 +591,11 @@ class App {
       },
       {
         image: nichImg,
-        text: 'Tripple C'
+        text: 'C C C'
       },
       {
         image: ujImg,
-        text: 'Mashuksha'
-      },
-      {
-        image: nichImg,
-        text: 'Asap'
+        text: 'Munchiez'
       },
       {
         image: ujImg,
