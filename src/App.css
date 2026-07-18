@@ -3139,8 +3139,229 @@ main.sphere-main {
 
 
 
-/*ecosystemmmmm*/
-.perusi 
-{
-   
+
+/*new sroll*/
+.hero-two {
+  --ink: #0a0d0f;
+  --fog: #b9c2c8;
+  --mist: #55707d;
+  --ember: #d8b876;
+  --paper: #efe9df;
+
+  position: relative;
+  height: 460vh;
+  background: var(--ink);
+}
+
+.stage {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  will-change: contents;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+ 
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-color: transparent;
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: transparent /*NGAFUU diroo */;
+  z-index: 5;
+  pointer-events: none;
+  
+}
+.barTop {
+  top: 0;
+  height: 14vh;
+}
+.barBottom {
+  bottom: 0;
+  height: 14vh;
+}
+
+.frame {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  padding: clamp(20px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fog);
+}
+
+.rowEnd {
+  align-items: flex-end;
+}
+
+.mark {
+  color: var(--fog);
+}
+.mark b {
+  color: var(--paper);
+  font-weight: 500;
+}
+
+.timecode {
+  font-variant-numeric: tabular-nums;
+  color: var(--ember);
+  letter-spacing: 0.08em;
+}
+
+.count {
+  font-variant-numeric: tabular-nums;
+  color: var(--fog);
+}
+.count b {
+  color: var(--paper);
+  font-weight: 500;
+}
+
+.chapters {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.chapter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(760px, 82vw);
+  transform: translate(-50%, calc(-50% + 16px));
+  opacity: 0;
+  will-change: opacity, transform;
+  pointer-events: none;
+}
+
+.chapterEyebrow {
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 22px;
+}
+
+.chapterLine {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 340;
+  font-style: italic;
+  font-size: clamp(2rem, 5.4vw, 4.4rem);
+  line-height: 1.1;
+  color: var(--paper);
+  letter-spacing: -0.01em;
+}
+
+.chapterLine em {
+  font-style: normal;
+  font-weight: 300;
+  color: var(--fog);
+}
+
+.cue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fog);
+  transition: opacity 0.3s ease;
+}
+
+.cueLine {
+  width: 1px;
+  height: 34px;
+  background: linear-gradient(to bottom, var(--ember), transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+.cueLine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: var(--paper);
+  animation: travel 1.8s ease-in-out infinite;
+}
+
+@keyframes travel {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(250%);
+  }
+}
+
+.rail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: rgba(239, 233, 223, 0.1);
+  z-index: 6;
+}
+
+.railFill {
+  height: 100%;
+  width: 0%;
+  background: var(--ember);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cueLine::after {
+    animation: none;
+  }
 }
