@@ -1,12 +1,15 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl';
 import { useEffect, useRef } from 'react';
 
-import nichImg from "../../public/assets/images/memeflix-icon.jpg"
-import ujImg from "../../public/assets/images/memeflix-icon1.jpg"
-import shengImg from "../../public/assets/images/sheng.png"
-
+import memeflix from "../../public/assets/images/memeflix-icon.jpg"
+//import nature from "../../public/assets/images/nature.png"
+import sheng from "../../public/assets/images/sheng.png"
+import basa from "../../public/assets/images/b77.png"
+import keja from "../../public/assets/images/kej.png"
+import  blocksaba  from "../../public/assets/images/bseven-white.png"
 import './CircularGallery.css';
-
+import munch from "../../public/assets/images/muchiez.png"
+import doba from "../../public/assets/images/doba.png"
 type GL = Renderer['gl'];
 
 function debounce<T extends (...args: any[]) => void>(func: T, wait: number) {
@@ -578,39 +581,27 @@ class App {
   ) {
     const defaultItems = [
       {
-        image: shengImg,
+        image: sheng,
         text: 'Sheng'
       },
       {
-        image: nichImg,
+        image: memeflix,
         text: 'Memeflix'
       },
       {
-        image: ujImg,
+        image: keja,
         text: 'Kejani'
       },
       {
-        image: nichImg,
-        text: 'C C C'
-      },
-      {
-        image: ujImg,
+        image: munch,
         text: 'Munchiez'
       },
       {
-        image: ujImg,
-        text: 'migpt'
+        image: memeflix,
+        text: 'Doba'
       },
       {
-        image: nichImg,
-        text: 'B7'
-      },
-      {
-        image: ujImg,
-        text: 'Spotlight'
-      },
-      {
-        image: nichImg,
+        image: doba,
         text: 'Doba'
       },
     ];

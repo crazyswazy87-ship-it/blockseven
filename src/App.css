@@ -51,10 +51,11 @@ body{
 
 .hero{
   position: relative;
+  isolation: isolate;
   width: 100%;
   min-height: 85vh;
   background-color: transparent;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   background-size: cover;
@@ -69,7 +70,7 @@ body{
   height: 500px;
   position: absolute;
   background-color: transparent;
-  z-index: -1;
+  z-index: 0;
   margin-top: -200px;
   border-radius: 10px;
 }
@@ -92,14 +93,15 @@ body{
   width: 100%;
   display: flex;
   justify-content: center;
+
   align-items: center;
   position: relative;
-  z-index: -2;
+  z-index: 4;
 }
 
 .hero-tag{
   display: inline-block;
-
+  
   padding: 10px 20px;
 
   border: 1px solid rgba(255,255,255,.2);
@@ -165,6 +167,7 @@ body{
 .btn-grad,
 .btn-gradd
 {
+  width: 120px;
   background-image: linear-gradient(to right, #1c92d2 0%, #f2fcfe 51%, #1c92d2 100%);
   color: black;
 }
@@ -175,7 +178,7 @@ body{
   text-align: center;
   text-transform: uppercase;
   font-family: var(--fontDhurajati);
-  font-size: 17px;
+  font-size: 13px;
   letter-spacing: 1px;
   transition: 0.5s;
   background-size: 200% auto;
@@ -237,7 +240,7 @@ body{
   width: 100%;
   background-color: transparent;
   min-height: inherit;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   background-size: cover;
@@ -1964,7 +1967,7 @@ FROM BITH
   color: black;
   font-family: var(--fontDhurajati);
   letter-spacing: 1px;
-
+  text-align: center;
   font-weight: bold;
   border-radius: 10px;
   display: flex;
@@ -3145,7 +3148,7 @@ main.sphere-main {
   --ink: #0a0d0f;
   --fog: #b9c2c8;
   --mist: #55707d;
-  --ember: #d8b876;
+  --ember: hsl(193, 100%, 50%);
   --paper: #efe9df;
 
   position: relative;
@@ -3238,7 +3241,13 @@ main.sphere-main {
 }
 
 .mark {
-  color: var(--fog);
+  color: var(--wablingkibla);
+  background-color: var(--wabling);
+  padding: 3px 5px;
+  font-weight: bolder;
+  border-radius: 20px;
+   backdrop-filter: blur(1px) saturate(1.2) brightness(1.2);
+  -webkit-backdrop-filter: blur(1px) saturate(1.2) brightness(1.2);
 }
 .mark b {
   color: var(--paper);
@@ -3267,6 +3276,7 @@ main.sphere-main {
   align-items: center;
   justify-content: center;
   text-align: center;
+  
 }
 
 .chapter {
@@ -3278,6 +3288,11 @@ main.sphere-main {
   opacity: 0;
   will-change: opacity, transform;
   pointer-events: none;
+  background-color: var(--wabling);
+  border-radius: 10px;
+  padding: 5px 10px;
+  backdrop-filter: blur(1px) saturate(1.2) brightness(1.2);
+  -webkit-backdrop-filter: blur(1px) saturate(1.2) brightness(1.2);
 }
 
 .chapterEyebrow {
@@ -3285,6 +3300,7 @@ main.sphere-main {
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--ember);
+  font-weight: bold;
   margin-bottom: 22px;
 }
 
@@ -3358,6 +3374,7 @@ main.sphere-main {
   height: 100%;
   width: 0%;
   background: var(--ember);
+  
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -35,6 +35,19 @@ import ScrollStack, { ScrollStackItem } from "../../component/ScrollStack";
 import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 
+import memeflix from "../../../public/assets/images/memeflix-icon.jpg"
+import kejani from "../../../public/assets/images/Franklin Saint.jpeg"
+//import nature from "../../../public/assets/images/nature.png"
+import sheng from "../../../public/assets/images/sheng.png"
+import basa from "../../../public/assets/images/b77.png"
+import keja from "../../../public/assets/images/kej.png"
+import { FaApple, FaGooglePlay } from "react-icons/fa"
+import  blocksaba  from "../../../public/assets/images/bseven-white.png"
+
+
+import prev from "../../../public/assets/icons/previous.svg"
+import next from "../../../public/assets/icons/nextt.svg"
+import { useRef } from "react";
 
 
 const About = () => {
@@ -88,6 +101,28 @@ const demoItems = [
   }
 ];
 
+const slideRef = useRef<HTMLDivElement>(null);
+
+  const handleNext = () => {
+  if (!slideRef.current) return;
+
+  const items = slideRef.current.querySelectorAll(".item-one");
+
+  if (items.length > 0) {
+    slideRef.current.appendChild(items[0]);
+  }
+};
+
+const handlePrev = () => {
+  if (!slideRef.current) return;
+
+  const items = slideRef.current.querySelectorAll(".item-one");
+
+  if (items.length > 0) {
+    slideRef.current.prepend(items[items.length - 1]);
+  }
+};
+
 
 
 
@@ -96,6 +131,7 @@ const demoItems = [
 
   return (
   <div className="home-container">
+    
    <section 
     className="hero">
 
@@ -198,6 +234,195 @@ const demoItems = [
       </div>
     </div>
   </section>
+  
+  <div className="heroo">
+  
+  <div className="container-one">
+    
+    <div className="slide-one" ref={slideRef}>
+
+      <div className="item-one" 
+        style={{
+        backgroundImage: `url(${basa})`,}}>
+          <div className="content-one">
+            <div className="name-one">Block Seven</div>
+            <div className="des-one">
+              A unified digital ecosystem powering innovative products that simplify everyday life.
+            </div>
+            <div className="store-buttons">
+              <button className="store-btn apple">
+              <img 
+                src={blocksaba}
+                alt="b7"
+                className="cent"
+              />
+              <div>
+                <span className="rusha">explore</span>
+                <strong>Ecosystems</strong>
+              </div>
+            </button>
+            </div>
+          </div>
+      </div>
+
+      <div className="item-one" 
+        style={{
+        backgroundImage: `url(${memeflix})`,}}>
+          <div className="content-one">
+            <div className="name-one">Memeflix</div>
+            <div className="des-one">
+              A modern social platform where users discover, create, and share trending memes.
+            </div>
+            <div className="store-buttons">
+              <button className="store-btn apple">
+              <img 
+                src={blocksaba}
+                alt="b7"
+                className="cent"
+              />
+              <div>
+                <span className="rusha">explore</span>
+                <strong>Ecosystems</strong>
+              </div>
+            </button>
+            </div>
+          </div>
+      </div>
+
+      <div className="item-one" 
+        style={{
+        backgroundImage: `url(${keja})`,}}>
+          <div className="content-one">
+            <div className="name-one">Kejani</div>
+            <div className="des-one">
+              A smart property discovery platform that helps Kenyans find verified rental homes with ease.
+            </div>
+            <div className="store-buttons">
+            <button className="store-btn apple">
+              <FaApple className="store-icon" />
+              <div>
+                <span className="rusha">Download on the</span>
+                <strong>App Store</strong>
+              </div>
+            </button>
+
+            <button className="store-btn google">
+              <FaGooglePlay className="store-icon" />
+              <div>
+                <span className="rusha">GET IT ON</span>
+                <strong>Google Play</strong>
+              </div>
+            </button>
+          </div>
+          </div>
+      </div>
+
+      <div className="item-one" 
+        style={{
+        backgroundImage: `url(${doba})`,}}>
+          <div className="content-one">
+            <div className="name-one">Doba</div>
+            <div className="des-one">
+              A seamless music streaming platform for discovering, listening to, and downloading your favorite tracks.
+            </div>
+            <div className="store-buttons">
+            <button className="store-btn apple">
+              <FaApple className="store-icon" />
+              <div>
+                <span className="rusha">Download on the</span>
+                <strong>App Store</strong>
+              </div>
+            </button>
+
+            <button className="store-btn google">
+              <FaGooglePlay className="store-icon" />
+              <div>
+                <span className="rusha">GET IT ON</span>
+                <strong>Google Play</strong>
+              </div>
+            </button>
+          </div>
+          </div>
+      </div>
+
+      <div className="item-one" 
+        style={{
+        backgroundImage: `url(${kejani})`,}}>
+          <div className="content-one">
+            <div className="name-one">CCC</div>
+            <div className="des-one">
+              An intelligent cost estimation platform for calculating, organizing, and managing project expenses.
+            </div>
+            <div className="store-buttons">
+            <button className="store-btn apple">
+              <FaApple className="store-icon" />
+              <div>
+                <span className="rusha">Download on the</span>
+                <strong>App Store</strong>
+              </div>
+            </button>
+
+            <button className="store-btn google">
+              <FaGooglePlay className="store-icon" />
+              <div>
+                <span className="rusha">GET IT ON</span>
+                <strong>Google Play</strong>
+              </div>
+            </button>
+          </div>
+          </div>
+      </div>
+
+      <div className="item-one" 
+        style={{
+        backgroundImage: `url(${sheng})`,}}>
+          <div className="content-one">
+            <div className="name-one">Sheng AI</div>
+            <div className="des-one">
+              An intelligent language assistant that bridges Sheng, English, and Swahili through fast, accurate, and context-aware translations.
+            </div>
+            <div className="store-buttons">
+            <button className="store-btn apple">
+              <FaApple className="store-icon" />
+              <div>
+                <span className="rusha">Download on the</span>
+                <strong>App Store</strong>
+              </div>
+            </button>
+
+            <button className="store-btn google">
+              <FaGooglePlay className="store-icon" />
+              <div>
+                <span className="rusha">GET IT ON</span>
+                <strong>Google Play</strong>
+              </div>
+            </button>
+          </div>
+          </div>
+      </div>
+
+    </div>
+
+    <div className="bofya">
+      <button className="prev" onClick={handlePrev}>
+        <img 
+          src={prev}
+          alt="Prev"
+          className="john"
+        />
+      </button>
+      <button className="next" onClick={handleNext}>
+        <img 
+          src={next}
+          alt="Next"
+          className="cena"
+        />
+      </button>
+    </div>
+  </div>
+
+  </div>
+    
 
   <div className="topscorrer">
   <ScrollVelocity
@@ -252,6 +477,7 @@ const demoItems = [
         className="uzi"
       />
 
+    <div className="dome">
     <DomeGallery
       fit={0.8}
       minRadius={600}
@@ -260,10 +486,11 @@ const demoItems = [
       dragDampening={2}
       grayscale
     />
+    </div>
     
 
 
-    {/*Scroll Float */}
+    {/*Scroll Float 
     <ScrollFloat
       animationDuration={9}
       ease='back.inOut(2)'
@@ -274,51 +501,7 @@ const demoItems = [
     >
       About Us
     </ScrollFloat>
-
-
-     {/*Shiny Text 
-      <ShinyText
-        text="BLOCK 7 ECOSYSTEM"
-        speed={5}
-        delay={0}
-        color="#fff"
-        shineColor="#51aaf9"
-        spread={120}
-        direction="left"
-        yoyo={false}
-        pauseOnHover
-        disabled={false}
-        className="uzi"
-      />
     */}
-
-      
-    
-
-        {/*Shiny Text 
-      <ShinyText
-        text="TECHNOLOGIES BEHIND THE VISION"
-        speed={5}
-        delay={0}
-        color="#fff"
-        shineColor="#51aaf9"
-        spread={120}
-        direction="left"
-        yoyo={false}
-        pauseOnHover
-        disabled={false}
-        className="uzi"
-      />
-
-      <LogoLoop
-        logos={imageLogos}
-        useCustomRender={false}
-      />
-      */}
-
-      
-
-
 
 
       {/*Folder 

@@ -19,7 +19,7 @@ export function CinematicHero({
   videoSrc,
   fallbackDuration = 5,
   fps = 24,
-  studioName = "Fernweh Films",
+  studioName = "Block Seven",
 }: CinematicHeroProps) {
   const containerRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
