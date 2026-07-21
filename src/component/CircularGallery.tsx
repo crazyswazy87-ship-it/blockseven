@@ -4,9 +4,8 @@ import { useEffect, useRef } from 'react';
 import memeflix from "../../public/assets/images/memeflix-icon.jpg"
 //import nature from "../../public/assets/images/nature.png"
 import sheng from "../../public/assets/images/sheng.png"
-import basa from "../../public/assets/images/b77.png"
 import keja from "../../public/assets/images/kej.png"
-import  blocksaba  from "../../public/assets/images/bseven-white.png"
+//import  blocksaba  from "../../public/assets/images/bseven-white.png"
 import './CircularGallery.css';
 import munch from "../../public/assets/images/muchiez.png"
 import doba from "../../public/assets/images/doba.png"

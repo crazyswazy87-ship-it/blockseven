@@ -9,10 +9,10 @@ function App() {
       {/**private routes */}
 
       {/**Public routes */}
-      <Route path="/" element={<Intro />} />
+      <Route path="/blockseven" element={<Intro />} />
       <Route path='/ecosystem' element={<Ecosystem/>} />
-      <Route path="/about" element={<About />} />
-      <Route path="/blockseven" element={<BlockSeven />} />
+      <Route path="/" element={<About />} />
+      <Route path="/bs" element={<BlockSeven />} />
     </Routes>
     </>
   )
