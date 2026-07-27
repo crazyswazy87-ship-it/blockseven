@@ -5,6 +5,7 @@ import './index.css'
 import './App.css'
 import "./App"
 import './animations.css'
+import "./blockseven.css"
 import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(

@@ -197,6 +197,9 @@ body{
   text-decoration: none;
 }
 
+
+
+
 /*HOME*/
 .home-container
 {
@@ -3033,10 +3036,10 @@ main.sphere-main {
 
 /*pixel transition*/
 .pixelated-image-card {
-  background-color: #070606;
+  background-color: #050505;
   color: #fff;
   border-radius: 15px;
-  border: 2px solid var(--graduation);
+  border: 2px solid  #F4D93E;
   width: 300px;
   max-width: 100%;
   position: relative;
@@ -3049,7 +3052,7 @@ main.sphere-main {
   height: 100%;
   display: grid;
   place-items: center;
-  background-color: black;
+  background-color: #050505;
 
 }
 

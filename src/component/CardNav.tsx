@@ -2,7 +2,6 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { GoArrowUpRight } from 'react-icons/go';
 import { useNavigate } from 'react-router-dom';
-import ScrollVelocity from './ScrollVelocity';
 import Shuffle from './Shuffle';
 
 type CardNavLink = {

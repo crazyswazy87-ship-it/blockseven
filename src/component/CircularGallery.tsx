@@ -1,8 +1,7 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl';
 import { useEffect, useRef } from 'react';
 
-import memeflix from "../../public/assets/images/memeflix-icon.jpg"
-//import nature from "../../public/assets/images/nature.png"
+import memeflix from "../../public/assets/images/memeflix-icon1.jpg"
 import sheng from "../../public/assets/images/sheng.png"
 import keja from "../../public/assets/images/kej.png"
 //import  blocksaba  from "../../public/assets/images/bseven-white.png"

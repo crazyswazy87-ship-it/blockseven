@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
-import { About, BlockSeven, Ecosystem, Intro } from './_root'
+import { About, BlockSeven, Ecosystem } from './_root'
+import Home from './_root/pages/Home'
 
 
 function App() {
@@ -9,10 +10,10 @@ function App() {
       {/**private routes */}
 
       {/**Public routes */}
-      <Route path="/blockseven" element={<Intro />} />
       <Route path='/ecosystem' element={<Ecosystem/>} />
-      <Route path="/" element={<About />} />
-      <Route path="/bs" element={<BlockSeven />} />
+      <Route path="/bs" element={<About />} />
+      <Route path='/blockseven' element={<Home/>} />
+      <Route path="/" element={<BlockSeven />} />
     </Routes>
     </>
   )

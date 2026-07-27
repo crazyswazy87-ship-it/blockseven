@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 //import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import CardNav from "../../component/CardNav";
 import ShinyText from "../../component/ShinyText";
-import ScrollFloat from "../../component/ScrollFloat";
+//import ScrollFloat from "../../component/ScrollFloat";
 import ScrollReveal from "../../component/ScrollReveal";
 //import RotatingText from "../../component/RotatingText";
 import FlowingMenu from "../../component/FlowingMenu";
@@ -35,7 +35,7 @@ import ScrollStack, { ScrollStackItem } from "../../component/ScrollStack";
 import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 
-import memeflix from "../../../public/assets/images/memeflix-icon.jpg"
+import memeflix from "../../../public/assets/images/memeflix-icon1.jpg"
 import kejani from "../../../public/assets/images/Franklin Saint.jpeg"
 //import nature from "../../../public/assets/images/nature.png"
 import sheng from "../../../public/assets/images/sheng.png"
@@ -43,7 +43,7 @@ import basa from "../../../public/assets/images/b77.png"
 import keja from "../../../public/assets/images/kej.png"
 import { FaApple, FaGooglePlay } from "react-icons/fa"
 import  blocksaba  from "../../../public/assets/images/bseven-white.png"
-
+import doba from "../../../public/assets/images/doba.png"
 
 import prev from "../../../public/assets/icons/previous.svg"
 import next from "../../../public/assets/icons/nextt.svg"

@@ -1,4 +1,4 @@
-import memeflix from "../../../public/assets/images/memeflix-icon.jpg"
+import memeflix from "../../../public/assets/images/memeflix-icon1.jpg"
 import kejani from "../../../public/assets/images/Franklin Saint.jpeg"
 //import nature from "../../../public/assets/images/nature.png"
 import sheng from "../../../public/assets/images/sheng.png"
