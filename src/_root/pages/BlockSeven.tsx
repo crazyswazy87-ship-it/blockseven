@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import blockbasa from "../../../public/assets/images/bseven-white.png"
 import { motion } from "framer-motion";
+import girimba from "../../../public/assets/images/Franklin Saint.jpeg"
+
 
 import {
   Menu,
@@ -25,6 +27,8 @@ import saint from "../../../public/assets/images/saint.png"
 import CircularGallery from "../../component/CircularGallery";
 import CircularText from "../../component/CircularText";
 import PixelTransition from "../../component/PixelTransition";
+import { ScrollSplitCard } from "../../component/ScrollSplitCard";
+import ScrollVelocity from "../../component/ScrollVelocity";
 
 /* ---------------------------------------------------------------
    DATA
@@ -337,7 +341,7 @@ const  BlockSeven= () => {
   const [submitted, setSubmitted] = useState(false);
   const [typed, setTyped] = useState("");
 
-  const heroLine = 'launch --website="today"';
+  const heroLine = 'think GLOBBALLY act LOCALLY';
 
   useEffect(() => {
     let i = 0;
@@ -383,7 +387,8 @@ const demoItems = [
   }
 ];
 
-
+/*SCROLLL*/
+//const containerRef = useRef<HTMLDivElement>(null)
 
 
   return (
@@ -446,7 +451,6 @@ const demoItems = [
           <span className="b7-hud b7-hud--left b7-mono">N 40.71 · W 74.00</span>
           <span className="b7-hud b7-hud--right b7-mono">REV. 07.2026</span>
 
-          
           <Eyebrow>Block Seven — Founder &amp; CEO</Eyebrow>
 
           <h1 className="b7-display">
@@ -510,6 +514,7 @@ const demoItems = [
             </a>
           </div>
 
+          
           <div className="b7-terminal">
             <div className="b7-terminal-bar">
               <span className="b7-terminal-dot b7-terminal-dot--red" />
@@ -577,6 +582,16 @@ const demoItems = [
           sub="We believe great software isn't just beautifully designed it solves problems, creates opportunities, and helps businesses grow."
         />
 
+        <div className="topscorrer">
+          <ScrollVelocity
+            texts={['Block Seven', 'Explore Beyond']} 
+            velocity={100}
+            className="custom-scroll-text"
+            numCopies={4}
+            damping={190}
+            stiffness={750}
+          />
+          </div>
 
         {/** 
         <div className="b7-card-grid">
@@ -618,6 +633,12 @@ const demoItems = [
           />
 
         </div>
+
+        <SectionHeading
+        eyebrow="Selected Work"
+        title="Building products people actually use."
+        sub="Explore a collection of websites, platforms, and AI-powered solutions designed, engineered, and launched by Block Seven."
+        />
         
       <motion.section id="work" 
       className="b7-container b7-section--tight"
@@ -625,11 +646,7 @@ const demoItems = [
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.4 }}>
-        <SectionHeading
-          eyebrow="Selected Work"
-          title="Building products people actually use."
-          sub="Explore a collection of websites, platforms, and AI-powered solutions designed, engineered, and launched by Block Seven."
-        />
+      
 
         <CircularGallery
             bend={1}
@@ -720,9 +737,9 @@ const demoItems = [
       </motion.section>
 
       {/* ============ Feedback ============ */}
-      <motion.section id="praise" 
+    <motion.section id="praise" 
       className="b7-praise-section"
-      variants={reveal}
+      variants={fadeLeft}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.4 }}>
@@ -733,8 +750,10 @@ const demoItems = [
             center
           />
         </div>
-
-        <div className="b7-marquee-row">
+      </motion.section>
+      
+      {/*fedbacks */}
+      <div className="b7-marquee-row">
           <div className="b7-marquee-track left">
             {[...TESTIMONIALS_A, ...TESTIMONIALS_A].map((t, i) => (
               <TestimonialCard key={i} t={t} />
@@ -748,7 +767,9 @@ const demoItems = [
             ))}
           </div>
         </div>
-      </motion.section>
+
+      
+
 
       {/* ============ CONTACT / INQUIRY ============ */}
       <motion.section id="contact" 
@@ -788,28 +809,28 @@ const demoItems = [
             ) : (
               <form onSubmit={handleSubmit} className="b7-form">
                 <div className="b7-form-row">
-                  <Field label="Name">
+                  
                     <input
                       required
                       className="b7-input"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      placeholder="Jordan Avery"
+                      placeholder="Your Name"
                     />
-                  </Field>
-                  <Field label="Email">
+                  
+                  
                     <input
                       required
                       type="email"
                       className="b7-input"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      placeholder="jordan@company.com"
+                      placeholder="Email"
                     />
-                  </Field>
+                
                 </div>
                 <div className="b7-form-row">
-                  <Field label="Project type">
+                 
                     <select
                       className="b7-input"
                       value={form.type}
@@ -817,11 +838,21 @@ const demoItems = [
                     >
                       <option>Product build</option>
                       <option>Design system</option>
+                      <option>Hotel & Hospitality</option>
+                      <option>Real Estate & Property</option>
+                      <option>Web app and Apps</option>
+                      <option>Restaurant & Café</option>
+                      <option>Wildlife & Safari</option>
+                      <option>Gym & Fitness</option>
+                      <option>Healthcare & Medical</option>
+                      <option>E-Commerce & Retail</option>
+                      <option>Education & Schools</option>
+                      <option>Travel & Tourism</option>
+                      <option>Lifestyle & Personal Brand</option>
                       <option>Brand & identity</option>
                       <option>Growth infrastructure</option>
-                      <option>Something else</option>
                     </select>
-                  </Field>
+                  
                   <Field label="Budget range">
                     <select
                       className="b7-input"
@@ -854,11 +885,53 @@ const demoItems = [
         </div>
       </motion.section>
 
+    {/**scrooller 
+      <div
+        ref={containerRef}
+        data-lenis-prevent
+        className="relat h-[100vh] w-full overflow-y-auto overscroll-contain [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+      >
+        <ScrollSplitCard
+          containerRef={containerRef}
+          imageSrc={girimba}
+          cards={[
+            {
+              title: "Going Zero to One",
+              description: "If you're navigating a new business... breaking into a new market.",
+              bgColor: "#e2e2e2",
+              textColor: "#111111"
+            },
+            {
+              title: "Scaling from One to N",
+              description: "If you've achieved Product/Market Fit...",
+              bgColor: "#1a5bcf",
+              textColor: "#ffffff"
+            },
+            {
+              title: "Need Quick Solutions",
+              description: "If you know exactly what you want and need...",
+              bgColor: "#1c1c1c",
+              textColor: "#ffffff"
+            }
+          ]}
+        />
+      </div>
+
+      */}
+          
+
       {/* ============ FOOTER ============ */}
       <footer className="b7-footer">
         <div className="b7-container b7-footer-inner">
           <div className="b7-footer-brand">
-            <span className="b7-logo-badge b7-logo-badge--sm b7-display">B7</span>
+            <span className="b7-logo-badge b7-logo-badge--sm b7-display">
+              <img 
+                src={blockbasa}
+                alt="b7"
+                className="ngam"
+              />
+
+            </span>
             <div>
               <div className="b7-footer-brand-name">Block Seven</div>
               <div className="b7-footer-brand-sub">© {new Date().getFullYear()} · Built by Kai Sterling</div>
