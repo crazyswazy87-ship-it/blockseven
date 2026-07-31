@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect} from "react";
 import blockbasa from "../../../public/assets/images/bseven-white.png"
 import { motion } from "framer-motion";
-import girimba from "../../../public/assets/images/Franklin Saint.jpeg"
+//import girimba from "../../../public/assets/images/Franklin Saint.jpeg"
 
 
 import {
@@ -12,10 +12,6 @@ import {
   Mail,
   Check,
   BadgeCheck,
-  Layers,
-  PenTool,
-  TrendingUp,
-  Cpu,
 } from "lucide-react";
 
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
@@ -27,8 +23,8 @@ import saint from "../../../public/assets/images/saint.png"
 import CircularGallery from "../../component/CircularGallery";
 import CircularText from "../../component/CircularText";
 import PixelTransition from "../../component/PixelTransition";
-import { ScrollSplitCard } from "../../component/ScrollSplitCard";
 import ScrollVelocity from "../../component/ScrollVelocity";
+import ShinyText from "../../component/ShinyText";
 
 /* ---------------------------------------------------------------
    DATA
@@ -48,61 +44,6 @@ const STATS = [
   { n: "100%", l: "custom solutions" },
 ];
 
-
-
-const SERVICES = [
-  {
-    icon: Cpu,
-    title: "Product Engineering",
-    desc: "Full-stack builds on React, TypeScript and Node — architected to survive scale, not just demo day.",
-    tags: ["React", "TypeScript", "Node", "Postgres"],
-  },
-  {
-    icon: Layers,
-    title: "Design Systems",
-    desc: "Component libraries and tokens that keep a growing product consistent across every surface.",
-    tags: ["Figma", "Tokens", "Storybook"],
-  },
-  {
-    icon: PenTool,
-    title: "Brand & Identity",
-    desc: "Visual systems for teams who want to look like the category leader before they are one.",
-    tags: ["Identity", "Motion", "Type"],
-  },
-  {
-    icon: TrendingUp,
-    title: "Growth Infrastructure",
-    desc: "Analytics, experimentation and performance work that turns traffic into a compounding asset.",
-    tags: ["Analytics", "SEO", "A/B Testing"],
-  },
-];
-
-const WORK = [
-  {
-    name: "Nimbus Health",
-    tag: "Patient portal rebuild",
-    stack: "React · TypeScript · FHIR",
-    metric: "62% faster check-in flow",
-  },
-  {
-    name: "Ledgerly",
-    tag: "Fintech operations dashboard",
-    stack: "Next.js · Node · Postgres",
-    metric: "$4.1M reconciled monthly",
-  },
-  {
-    name: "Autohaus",
-    tag: "EV marketplace platform",
-    stack: "React · GraphQL · Stripe",
-    metric: "3.4x conversion lift",
-  },
-  {
-    name: "Fieldnote",
-    tag: "Ops tooling for field crews",
-    stack: "React Native · TypeScript",
-    metric: "9,000+ daily active crews",
-  },
-];
 
 const PROCESS = [
   {
@@ -225,7 +166,7 @@ const reveal = {
     scale: 1,
     filter: "blur(0px)",
     transition: {
-      duration: 0.9,
+      duration: 0.6,
       type: "spring",
       stiffness: 90,
       damping: 18,
@@ -289,46 +230,6 @@ const fadeLeft = {
   },
 };
 
-const fadeRight = {
-  hidden: {
-    opacity: 0,
-    x: 80,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-/*------------------------------------------------
-stagger
-------------------------------------------- */
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
-
-const item = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-    },
-  },
-};
 
 /* ---------------------------------------------------------------
    MAIN COMPONENT
@@ -451,6 +352,7 @@ const demoItems = [
           <span className="b7-hud b7-hud--left b7-mono">N 40.71 · W 74.00</span>
           <span className="b7-hud b7-hud--right b7-mono">REV. 07.2026</span>
 
+            
           <Eyebrow>Block Seven — Founder &amp; CEO</Eyebrow>
 
           <h1 className="b7-display">
@@ -461,12 +363,8 @@ const demoItems = [
             businesses<span className="b7-hero-accent">.</span>
           </h1>
 
-          <p className="b7-lede">
-            I'm Wayne Okoth, founder of Block Seven. I design and engineer software, websites, and AI-powered solutions that help businesses launch with confidence, grow sustainably, and stay ahead in a rapidly changing world.
-          </p>
-
           <motion.section id="swazy" className="konda"
-            variants={slideRight}
+            variants={reveal}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}>
@@ -505,8 +403,28 @@ const demoItems = [
           />
           </motion.section>
 
+          <br/>
+
+
+          {/*Shiny Text */}
+          <ShinyText
+            text=" I'm Wayne Okoth, founder of Block Seven. I design and engineer software, 
+                   both cinematic and 3d websites, and AI-powered solutions that help businesses launch with confidence,
+                   grow sustainably, and stay ahead in a rapidly changing world."
+            speed={2}
+            delay={0}
+            color="#b5b5b5"
+            shineColor="#ffffff"
+            spread={120}
+            direction="left"
+            yoyo={false}
+            pauseOnHover
+            disabled={false}
+            className="b7-lede"
+          />
+
           <div className="b7-hero-actions">
-            <a href="#work" className="b7-btn b7-btn-primary b7-btn-primary--lg">
+            <a href="#work" className="b7-btn b7-btn-primary b7-btn-primary--lg btn-grad">
               Explore My Work <ArrowUpRight size={18} />
             </a>
             <a href="#contact" className="b7-btn b7-btn-outline">
@@ -520,7 +438,7 @@ const demoItems = [
               <span className="b7-terminal-dot b7-terminal-dot--red" />
               <span className="b7-terminal-dot b7-terminal-dot--yellow" />
               <span className="b7-terminal-dot b7-terminal-dot--green" />
-              <span className="b7-terminal-title">zsh — block-seven</span>
+              <span className="b7-terminal-title">npm — block-seven</span>
             </div>
             <div className="b7-terminal-body">
               <span className="b7-terminal-user">@block-seven</span>
@@ -557,11 +475,41 @@ const demoItems = [
                 loopDelay={0}
                 className="b7-stat-num b7-display"
               />
-              <div className="b7-stat-label">{s.l}</div>
+              <div className="b7-stat-label">
+              <ShinyText
+              text={s.l}
+              speed={2}
+              delay={0}
+              color="#b5b5b5"
+              shineColor="#ffffff"
+              spread={120}
+              direction="left"
+              yoyo={false}
+              pauseOnHover
+              disabled={false}
+              className="b7-stat-label"
+            />
+            </div>
+              
             </div>
           ))}
         </div>
       </motion.section>
+
+      <br/>
+      <br/>
+      <br/>
+
+      <div className="topscorrer">
+      <ScrollVelocity
+        texts={['Block Seven', 'Explore Beyond']} 
+        velocity={100}
+        className="custom-scroll-text"
+        numCopies={9}
+        damping={190}
+        stiffness={750}
+      />
+      </div>
 
       {/* ============ SERVICES ============ */}
       <motion.section id="services" 
@@ -575,23 +523,22 @@ const demoItems = [
           title="Websites engineered to grow your business."
           sub="Whether you need a company website, an online store, or a custom web application, I build solutions that are fast, modern, and scalable."
         />
+        </motion.section>
 
+        <motion.section id="services" 
+       className="b7-container b7-sectio"
+       variants={slideRight}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}>
         <SectionHeading
           eyebrow="What Drives Us"
           title="Technology with purpose."
           sub="We believe great software isn't just beautifully designed it solves problems, creates opportunities, and helps businesses grow."
         />
+        </motion.section>
 
-        <div className="topscorrer">
-          <ScrollVelocity
-            texts={['Block Seven', 'Explore Beyond']} 
-            velocity={100}
-            className="custom-scroll-text"
-            numCopies={4}
-            damping={190}
-            stiffness={750}
-          />
-          </div>
+        
 
         {/** 
         <div className="b7-card-grid">
@@ -613,14 +560,13 @@ const demoItems = [
           ))}
         </div>
       */}
-      </motion.section>
+      
 
         <SectionHeading
           eyebrow="Block seven ecosystems"
           title="We are all about."
         />
 
-        
        <div className="scroll-section">
 
         <FlowingMenu items={demoItems}
@@ -660,34 +606,6 @@ const demoItems = [
 
 
       </motion.section>
-
-      {/* ============ WORK ============ 
-      <section id="work" className="b7-container b7-section--tight">
-        <SectionHeading
-          eyebrow="Selected work"
-          title="Products currently in production."
-          sub="A handful of the systems Block Seven has designed, built and shipped end-to-end."
-        />
-        <div className="b7-card-grid">
-          {WORK.map((w) => (
-            <a key={w.name} href="#contact" className="b7-card b7-work-card">
-              <div className="b7-work-top">
-                <div>
-                  <h3 className="b7-display">{w.name}</h3>
-                  <p className="b7-work-tag">{w.tag}</p>
-                </div>
-                <ArrowUpRight size={20} className="b7-hero-accent" />
-              </div>
-              <div className="b7-work-footer b7-mono">
-                <span className="b7-work-stack">{w.stack}</span>
-                <span className="b7-work-metric">{w.metric}</span>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-      */}
-
       {/* ============ PROCESS ============ */}
       <motion.section id="process" className="b7-container b7-section--tight"
       variants={reveal}
@@ -738,7 +656,6 @@ const demoItems = [
 
       {/* ============ Feedback ============ */}
     <motion.section id="praise" 
-      className="b7-praise-section"
       variants={fadeLeft}
       initial="hidden"
       whileInView="visible"
@@ -768,12 +685,12 @@ const demoItems = [
           </div>
         </div>
 
-      
+        <br/>
 
 
       {/* ============ CONTACT / INQUIRY ============ */}
       <motion.section id="contact" 
-      className="b7-container b7-contact-section"
+      className="b1x b7-container b7-contact-section"
       variants={reveal}
       initial="hidden"
       whileInView="visible"
@@ -801,7 +718,7 @@ const demoItems = [
                   onClick={() =>
                     { setSubmitted(false); setForm({ name: "", email: "", type: "Product build", budget: "$5k – $15k", message: "" }); }
                   }
-                  className="b7-btn b7-btn-outline"
+                  className=" btn-grad"
                 >
                   Send another inquiry
                 </button>
@@ -876,7 +793,7 @@ const demoItems = [
                     placeholder="What are you building, and what does done look like?"
                   />
                 </Field>
-                <button type="submit" className="b7-btn b7-btn-primary b7-btn-primary--lg">
+                <button type="submit" className=" btn-grad">
                   Send inquiry <ArrowRight size={18} />
                 </button>
               </form>
@@ -884,6 +801,8 @@ const demoItems = [
           </div>
         </div>
       </motion.section>
+
+      <br/>
 
     {/**scrooller 
       <div

@@ -5,6 +5,9 @@
 --------------------------------------------------------------- */
 :root {
   --bg: #050505;
+  --wabling:rgba(255, 255, 255, 0.1);
+  --wablingkibla:rgba(4, 0, 0, 0.245);
+  scroll-behavior: smooth;
   --bg-alt: #0A0A0B;
   --panel: #18181B;
   --panel-2: #1F1F23;
@@ -179,7 +182,7 @@ html { scroll-behavior: smooth; }
 
 .b7-btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  border-radius: 999px;
+  border-radius: 10px;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 600;
   text-decoration: none;
@@ -197,6 +200,52 @@ html { scroll-behavior: smooth; }
   font-family: 'Inter', sans-serif;
 }
 
+/*buttons*/
+.btn-grad
+{
+  
+  background-image: linear-gradient(to right,var(--yellow) 0%, #fff 51%, var(--yellow) 100%);
+  color: black;
+}
+
+.btn-grad {
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; gap: 8px;
+  border-radius: 20px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  justify-self: center;
+  margin: 10px;
+  padding: 12px 10px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--fontDhurajati);
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
+  display: flex;
+  font-weight: bold;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  color: black;
+  text-decoration: none;
+}
+
+
+
 .b7-menu-toggle { display: block; background: none; border: none; color: var(--white); cursor: pointer; }
 @media (min-width: 768px) { .b7-menu-toggle { display: none; } }
 
@@ -206,12 +255,13 @@ html { scroll-behavior: smooth; }
   background: var(--bg-alt);
   border-bottom: 1px solid var(--line);
 }
+
 @media (min-width: 768px) { .b7-mobile-menu { display: none; } }
 .b7-mobile-menu a { color: var(--bone); font-size: 15px; text-decoration: none; }
 .b7-mobile-menu .b7-btn { text-align: center; }
 
 /* ---------------- hero ---------------- */
-.b7-hero { position: relative; padding-top: 160px; padding-bottom: 96px; }
+.b7-hero { position: relative; padding-top: 130px; padding-bottom: 96px; }
 .b7-hero-inner { position: relative; }
 .b7-hud {
   display: none;
@@ -402,12 +452,19 @@ html { scroll-behavior: smooth; }
   border-bottom: 1px solid var(--line);
   background: var(--bg-alt);
 }
+
+@media (min-width: 1200px) {
+
+}
+
 .b7-marquee-row {
   overflow: hidden;
+  width:95%;
   margin-bottom: 16px;
   -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
   mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
 }
+
 .b7-marquee-track {
   display: flex;
   gap: 20px;
@@ -415,7 +472,7 @@ html { scroll-behavior: smooth; }
   padding: 0 20px;
 }
 .b7-marquee-track.left { animation: b7-marquee-left 42s linear infinite; }
-.b7-marquee-track.right { animation: b7-marquee-right 48s linear infinite; }
+.b7-marquee-track.right { animation: b7-marquee-right 48s linear infinite;}
 .b7-marquee-row:hover .b7-marquee-track { animation-play-state: paused; }
 
 @keyframes b7-marquee-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
@@ -426,6 +483,7 @@ html { scroll-behavior: smooth; }
   width: 320px;
   padding: 24px;
 }
+
 .b7-testimonial-card p { font-size: 15px; line-height: 1.6; color: var(--white); }
 .b7-testimonial-footer { display: flex; align-items: center; gap: 12px; margin-top: 24px; }
 .b7-avatar {
@@ -442,13 +500,15 @@ html { scroll-behavior: smooth; }
 .b7-testimonial-handle { font-size: 12px; color: var(--gray-dim); }
 
 /* ---------------- contact ---------------- */
-.b7-contact-section { padding-top: 110px; padding-bottom: 140px; }
+.b7-contact-section {padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; }
 .b7-contact-card {
   position: relative;
   overflow: hidden;
   border-radius: 24px;
   padding: 32px;
-  background: var(--panel);
+  background: rgb(0, 0, 0);
+   backdrop-filter: blur(56px) saturate(1.8) brightness(1.2);
+  -webkit-backdrop-filter: blur(56px) saturate(1.8) brightness(1.2);
   border: 1px solid var(--line);
 }
 @media (min-width: 768px) { .b7-contact-card { padding: 56px; } }
@@ -468,7 +528,7 @@ html { scroll-behavior: smooth; }
 .b7-field-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px; letter-spacing: 0.08em;
-  color: var(--gray-dim);
+  color: var(--yellow);
   text-transform: uppercase;
 }
 .b7-input {
@@ -518,4 +578,65 @@ textarea.b7-input { resize: vertical; }
 /* ---------------- utility / motion ---------------- */
 @media (prefers-reduced-motion: reduce) {
   .b7-marquee-track, .b7-caret { animation: none !important; }
+}
+
+.topscorrer
+{
+  width: 70%;
+  display: flex;
+  overflow: hidden;
+  background-color: transparent;
+  justify-content: center;
+}
+
+.b1x{
+  background-color: black;
+  display: grid;
+  justify-self: center;
+  align-self: center;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 17px;
+  position:relative;
+}
+
+
+
+@property --angle{
+  syntax: "<angle>"; 
+  initial-value:0deg;
+  inherits:false ;
+
+}
+
+.b1x::after, .b1x::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), #fff, black,white,red,white,lightgreen,#fff, black,white,red,white,lightgreen );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50% ;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 30px;
+  animation: 4s spin linear infinite;
+}
+
+.b1x::before{
+  filter: blur(1.3rem);
+  opacity: 0.5;
+}
+@keyframes spin{
+  from{
+    --angle:0deg;
+  }
+  to{
+    --angle:360deg;
+  }
 }
