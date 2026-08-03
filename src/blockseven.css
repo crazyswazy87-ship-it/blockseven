@@ -78,6 +78,7 @@ html { scroll-behavior: smooth; }
   letter-spacing: 0.18em;
   color: var(--yellow);
   text-transform: uppercase;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
 }
 .b7-eyebrow::before {
   content: "";
@@ -121,9 +122,11 @@ html { scroll-behavior: smooth; }
   border-bottom: 1px solid transparent;
   transition: all .3s ease;
 }
+
 .b7-header.is-scrolled {
-  background: rgba(15, 15, 17, 0.85);
-  backdrop-filter: blur(10px);
+  background: var(--wablingkibla);
+   backdrop-filter: blur(11px) saturate(1.8) brightness(1.2);
+  -webkit-backdrop-filter: blur(11px) saturate(1.8) brightness(1.2);
   border-bottom: 1px solid var(--line);
 }
 .b7-header-row {
@@ -157,7 +160,8 @@ html { scroll-behavior: smooth; }
 .b7-link { position: relative; font-size: 14px; color: var(--bone); text-decoration: none; }
 .b7-link::after {
   content: "";
-  position: absolute; left: 0; bottom: -3px;
+  position: absolute; left: 0; 
+  bottom: -3px;
   width: 0; height: 1px;
   background: var(--yellow);
   transition: width .2s ease;
@@ -252,13 +256,34 @@ html { scroll-behavior: smooth; }
 .b7-mobile-menu {
   display: flex; flex-direction: column; gap: 16px;
   padding: 0 24px 24px;
-  background: var(--bg-alt);
+  background: transparent;
   border-bottom: 1px solid var(--line);
 }
 
 @media (min-width: 768px) { .b7-mobile-menu { display: none; } }
-.b7-mobile-menu a { color: var(--bone); font-size: 15px; text-decoration: none; }
+.b7-mobile-menu a 
+{ 
+  color: var(--bone); 
+  font-size: 15px; 
+  text-decoration: none; 
+}
 .b7-mobile-menu .b7-btn { text-align: center; }
+
+
+@keyframes animate {
+  from {
+    opacity: 0;
+    transform: translate(0, 100px);
+    filter: blur(33px);
+  }
+  to{
+    opacity: 1;
+    transform: translate(0);
+    filter: blur(0);
+  }
+}
+
+
 
 /* ---------------- hero ---------------- */
 .b7-hero { position: relative; padding-top: 130px; padding-bottom: 96px; }
@@ -269,7 +294,7 @@ html { scroll-behavior: smooth; }
   top: -40px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  color: var(--gray-dim);
+  color: var(--yellow-soft);
 }
 .b7-hud--left { left: -6px; }
 .b7-hud--right { right: -6px; }
@@ -294,6 +319,19 @@ html { scroll-behavior: smooth; }
 
 .b7-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 40px; justify-content: center;  }
 
+
+.crownlove
+{
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  background-color: transparent;
+  z-index: 1;
+  margin-top: -130px;
+  border-radius: 10px;
+}
+
+
 /* ---------------- terminal card ---------------- */
 .b7-terminal {
   margin-top: 64px;
@@ -312,10 +350,10 @@ html { scroll-behavior: smooth; }
 .b7-terminal-dot--red { background: #FF5F57; }
 .b7-terminal-dot--yellow { background: #FEBC2E; }
 .b7-terminal-dot--green { background: #28C840; }
-.b7-terminal-title { margin-left: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-dim); }
+.b7-terminal-title { margin-left: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--yellow-soft); }
 .b7-terminal-body { padding: 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; }
 .b7-terminal-user { color: #7CF29C; }
-.b7-terminal-path { color: var(--gray-dim); }
+.b7-terminal-path { color: var(--yellow-soft); }
 
 .b7-caret {
   color: var(--yellow);
@@ -383,7 +421,7 @@ html { scroll-behavior: smooth; }
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
 }
-.b7-work-stack { color: var(--gray-dim); }
+.b7-work-stack { color: var(--yellow-soft); }
 .b7-work-metric { color: var(--yellow); }
 
 /* ---------------- process ---------------- */
@@ -427,7 +465,7 @@ html { scroll-behavior: smooth; }
 .b7-checkpoint-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px; letter-spacing: 0.1em;
-  color: var(--gray-dim);
+  color: var(--yellow-soft);
   text-transform: uppercase;
 }
 .b7-checklist { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
@@ -441,7 +479,7 @@ html { scroll-behavior: smooth; }
 .b7-checklist-item span:last-child { font-size: 14.5px; color: var(--bone); }
 
 .b7-behaviour { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
-.b7-behaviour-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray-dim); margin-bottom: 6px; }
+.b7-behaviour-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--yellow-soft); margin-bottom: 6px; }
 .b7-behaviour-code { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--yellow); word-break: break-word; }
 
 /* ---------------- wall of love ---------------- */
@@ -497,7 +535,7 @@ html { scroll-behavior: smooth; }
   font-weight: 600;
 }
 .b7-testimonial-name { display: flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; }
-.b7-testimonial-handle { font-size: 12px; color: var(--gray-dim); }
+.b7-testimonial-handle { font-size: 12px; color: var(--yellow-soft); }
 
 /* ---------------- contact ---------------- */
 .b7-contact-section {padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; }
@@ -537,6 +575,7 @@ html { scroll-behavior: smooth; }
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 11px 14px;
+  
   color: var(--white);
   font-size: 13.5px;
   font-family: 'Inter', sans-serif;
@@ -568,8 +607,8 @@ textarea.b7-input { resize: vertical; }
   .b7-footer-inner { flex-direction: row; align-items: center; justify-content: space-between; }
 }
 .b7-footer-brand { display: flex; align-items: center; gap: 12px; }
-.b7-footer-brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 16px; margin-top: 25px; }
-.b7-footer-brand-sub { color: var(--gray-dim); font-size: 12px; }
+.b7-footer-brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 16px; margin-top: 30px; }
+.b7-footer-brand-sub { color: var(--yellow); font-size: 12px; }
 .b7-footer-nav { display: flex; flex-wrap: wrap; gap: 24px; }
 .b7-footer-nav a { color: var(--bone); font-size: 13px; }
 .b7-social-row { display: flex; align-items: center; gap: 16px; }

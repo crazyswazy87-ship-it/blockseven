@@ -25,6 +25,8 @@ import CircularText from "../../component/CircularText";
 import PixelTransition from "../../component/PixelTransition";
 import ScrollVelocity from "../../component/ScrollVelocity";
 import ShinyText from "../../component/ShinyText";
+import MagicRings from "../../component/MagicRings";
+import RotatingText from "../../component/RotatingText";
 
 /* ---------------------------------------------------------------
    DATA
@@ -317,16 +319,6 @@ const demoItems = [
             ))}
           </nav>
 
-          <div className="b7-nav-actions">
-            <span className="b7-status-pill">
-              <span className="b7-status-dot" />
-              Open for Q4 builds
-            </span>
-            <a href="#contact" className="b7-btn b7-btn-primary">
-              Start a project
-            </a>
-          </div>
-
           <button className="b7-menu-toggle" onClick={() => setMenuOpen((v) => !v)} aria-label="Toggle menu">
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -349,10 +341,7 @@ const demoItems = [
       {/* ============ HERO ============ */}
       <motion.section id="top" className="b7-hero b7-grid-bg b7-radial-bg">
         <div className="b7-container b7-hero-inner">
-          <span className="b7-hud b7-hud--left b7-mono">N 40.71 · W 74.00</span>
-          <span className="b7-hud b7-hud--right b7-mono">REV. 07.2026</span>
-
-            
+          
           <Eyebrow>Block Seven — Founder &amp; CEO</Eyebrow>
 
           <h1 className="b7-display">
@@ -362,6 +351,33 @@ const demoItems = [
             <br />
             businesses<span className="b7-hero-accent">.</span>
           </h1>
+
+            {/*Magic rings*/}
+          <div className="crownlove">
+            <MagicRings
+              color="#f4d93e"
+              colorTwo= " #FCEFA6"
+              ringCount={6}
+              speed={0.95}
+              attenuation={10}
+              lineThickness={2}
+              baseRadius={0.35}
+              radiusStep={0.1}
+              scaleRate={0.1}
+              opacity={1}
+              blur={0}
+              noiseAmount={0.1}
+              rotation={0}
+              ringGap={1.5}
+              fadeIn={0.7}
+              fadeOut={0.5}
+              followMouse={true}
+              mouseInfluence={0.2}
+              hoverScale={1.2}
+              parallax={0.05}
+              clickBurst={false}
+            />
+          </div>
 
           <motion.section id="swazy" className="konda"
             variants={reveal}
@@ -851,9 +867,25 @@ const demoItems = [
               />
 
             </span>
-            <div>
-              <div className="b7-footer-brand-name">Block Seven</div>
-              <div className="b7-footer-brand-sub">© {new Date().getFullYear()} · Built by Kai Sterling</div>
+
+             <div>
+              {/*Rotate Text */}        
+              <RotatingText
+                texts={['BLOCK 7 ECOSYSTEMS', 'BLOCK SEVEN']}
+                mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                staggerFrom="last"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-120%" }}
+                staggerDuration={0.025}
+                splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                rotationInterval={4000}
+                splitBy="characters"
+                auto
+                loop={false}
+                className=" b7-footer-brand-name"
+              />
             </div>
           </div>
 
