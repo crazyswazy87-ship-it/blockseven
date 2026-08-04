@@ -27,6 +27,7 @@ import ScrollVelocity from "../../component/ScrollVelocity";
 import ShinyText from "../../component/ShinyText";
 import MagicRings from "../../component/MagicRings";
 import RotatingText from "../../component/RotatingText";
+import ProjectSlider from "../components/shared/PojectSlider";
 
 /* ---------------------------------------------------------------
    DATA
@@ -595,6 +596,28 @@ const demoItems = [
           />
 
         </div>
+
+           
+      <motion.section id="work" 
+      className="b7-container b7-section--tigh"
+      variants={reveal}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.4 }}>
+
+        <SectionHeading
+        eyebrow="Featured work"
+        title="Websites & web apps i've made"
+        sub="Explore a collection of websites, platforms, and AI-powered solutions designed, engineered wich were created by Wayne"
+        />
+
+      
+
+        <div className="scroll-section">
+        <ProjectSlider/>
+        </div>
+
+        </motion.section>
 
         <SectionHeading
         eyebrow="Selected Work"
