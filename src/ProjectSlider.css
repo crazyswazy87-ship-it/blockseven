@@ -154,7 +154,7 @@ body {
 
 .project-card__thumb {
   width: 133px;
-  height: 269px;
+  height: 109px;
   border-radius: 0.45rem;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);

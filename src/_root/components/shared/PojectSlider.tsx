@@ -27,7 +27,7 @@ const PROJECTS: Project[] = [
     btnLabel: "View Project",
   },
   {
-    bg: "/assets/images/shengbg.jpeg",
+    bg: "/assets/images/shengbg.png",
     thumb: "/assets/images/sheng.png",
     title: "SHENG AI",
     desc: "AI Sheng translator",

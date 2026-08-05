@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from "react";
 import blockbasa from "../../../public/assets/images/bseven-white.png"
 import { motion } from "framer-motion";
+import vida from "../../../public/assets/videos/sky.mp4"
 //import girimba from "../../../public/assets/images/Franklin Saint.jpeg"
 
 
@@ -28,6 +29,8 @@ import ShinyText from "../../component/ShinyText";
 import MagicRings from "../../component/MagicRings";
 import RotatingText from "../../component/RotatingText";
 import ProjectSlider from "../components/shared/PojectSlider";
+import HeroSection from "../components/HeroSection";
+import { createInquiry } from "../../appwrite/api";
 
 /* ---------------------------------------------------------------
    DATA
@@ -96,6 +99,13 @@ const TESTIMONIALS_B = [
   { q: "Top-tier engineering with actual design taste attached. Rare.", name: "Ben Castellano", handle: "@bencastel" },
   { q: "Handed us a system our own team could extend without hand-holding.", name: "Lina Hartmann", handle: "@linahart" },
 ];
+
+const scrollToSection = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
 type Testimonial = { q: string; name: string; handle: string };
 
@@ -265,13 +275,37 @@ const  BlockSeven= () => {
 
   const step = PROCESS.find((p) => p.id === activeStep) || PROCESS[0];
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!form.name || !form.email || !form.message) return;
-    setSubmitted(true);
-  }
+  const [loading, setLoading] = useState(false);
 
-    //Flowing Menu
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!form.name || !form.email || !form.phone || !form.message) return;
+
+  try {
+    setLoading(true);
+
+    await createInquiry(form);
+
+    setSubmitted(true);
+
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      type: "Product build",
+      budget: "$10k – $15k",
+      message: "",
+    });
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong.");
+  } finally {
+    setLoading(false);
+  }
+};
+  
+//Flowing Menu
 const demoItems = [
   {
     text: "Kenya",
@@ -339,19 +373,43 @@ const demoItems = [
         )}
       </header>
 
+      <>
+        <HeroSection
+            logoSrc={blockbasa}
+            videoSrc={vida}
+            posterSrc="/assets/hero-poster.jpg"
+            eyebrow="Explore Beyond"
+            collapsedHeight="64vh"
+            slideHoldMs={5200}
+            slideFadeMs={1000}
+            slides={[
+              {
+                headline: "Beyond static websites. Into cinematic experiences",
+                subhead:
+                  "Block Seven creates cinematic websites and interactive digital experiences that transform brands into unforgettable stories.",
+              },
+              {
+                headline: "Where brands become unforgettable",
+                subhead:
+                  "Block Seven creates cinematic digital experiences that inspire trust, spark emotion, and convert visitors into customers.",
+              },
+              {
+                headline: "Building the digital backbone of modern websites",
+                subhead:
+                  "Luxury hotels, real estate, eCommerce, startups, restaurants, portfolios, and enterprise solutions—crafted with precision from concept to launch.",
+              },
+            ]}
+            primaryCtaLabel="Start Your Project"
+            secondaryCtaLabel="View Our Work"
+            onPrimaryCta={() => scrollToSection("contact")}
+            onSecondaryCta={() => scrollToSection("work")}
+          />
+
       {/* ============ HERO ============ */}
       <motion.section id="top" className="b7-hero b7-grid-bg b7-radial-bg">
         <div className="b7-container b7-hero-inner">
           
           <Eyebrow>Block Seven — Founder &amp; CEO</Eyebrow>
-
-          <h1 className="b7-display">
-            Building the digital
-            <br />
-            backbone of modern
-            <br />
-            businesses<span className="b7-hero-accent">.</span>
-          </h1>
 
             {/*Magic rings*/}
           <div className="crownlove">
@@ -607,7 +665,7 @@ const demoItems = [
 
         <SectionHeading
         eyebrow="Featured work"
-        title="Websites & web apps i've made"
+        title="My Recent Projects"
         sub="Explore a collection of websites, platforms, and AI-powered solutions designed, engineered wich were created by Wayne"
         />
 
@@ -783,6 +841,15 @@ const demoItems = [
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       placeholder="Email"
                     />
+
+                    <input
+                      required
+                      type="phone"
+                      className="b7-input"
+                      value={form.phone}
+                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                      placeholder="Phone number"
+                    />
                 
                 </div>
                 <div className="b7-form-row">
@@ -815,7 +882,7 @@ const demoItems = [
                       value={form.budget}
                       onChange={(e) => setForm({ ...form, budget: e.target.value })}
                     >
-                      <option>$5k – $15k</option>
+                      <option>$10k – $15k</option>
                       <option>$15k – $40k</option>
                       <option>$40k – $100k</option>
                       <option>$100k+</option>
@@ -829,12 +896,16 @@ const demoItems = [
                     className="b7-input"
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    placeholder="What are you building, and what does done look like?"
+                    placeholder="Describe your vision we'll turn it into a cinematic digital experience."
                   />
                 </Field>
-                <button type="submit" className=" btn-grad">
-                  Send inquiry <ArrowRight size={18} />
-                </button>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="btn-grad"
+              >
+                  {loading ? "Sending..." : "Send Inquiry"}
+              </button>
               </form>
             )}
           </div>
@@ -928,7 +999,9 @@ const demoItems = [
           </div>
         </div>
       </footer>
+      </>
     </div>
+    
   );
 }
 
