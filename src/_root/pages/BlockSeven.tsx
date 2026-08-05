@@ -399,7 +399,7 @@ const demoItems = [
                   "Luxury hotels, real estate, eCommerce, startups, restaurants, portfolios, and enterprise solutions—crafted with precision from concept to launch.",
               },
             ]}
-            primaryCtaLabel="Get yours"
+            primaryCtaLabel="Ready to Build?"
             secondaryCtaLabel="View Our Work"
             onPrimaryCta={() => scrollToSection("contact")}
             onSecondaryCta={() => scrollToSection("work")}
