@@ -1,4 +1,6 @@
 import React, { useMemo, useState } from "react";
+import dtheme from "../../../public/assets/images/pc.jpg"
+import ltheme from "../../../public/assets/images/pz.png"
 
 /* ----------------------------------------------------------------------- */
 /* Types                                                                    */
@@ -323,8 +325,14 @@ const BlockPc: React.FC = () => {
   }, []);
 
   return (
-    <div className={`hd-root ${isDark ? "hd-theme-dark" : "hd-theme-light"}`}>
+    <div className={`hd-root ${isDark ? "hd-dark" : "hd-light"}`}>
       <style>{`
+        .hd-light {
+           background-image: url(${dtheme})
+        }
+        .hd-dark {
+           background-image: url(${ltheme})
+        }
         .hd-root {
           --hd-radius-lg: 26px;
           --hd-radius-md: 20px;
@@ -604,7 +612,7 @@ const BlockPc: React.FC = () => {
         }
         .hd-card:hover {
           transform: translateY(-3px);
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
         }
 
         .hd-card-create {
@@ -785,51 +793,6 @@ const BlockPc: React.FC = () => {
         }
       `}</style>
 
-      {/* sky decoration */}
-      <div className="hd-sky">
-        {stars.map((s, i) => (
-          <span
-            key={i}
-            className="hd-star"
-            style={{
-              top: `${s.top}%`,
-              left: `${s.left}%`,
-              width: s.size,
-              height: s.size,
-              animationDuration: `${s.duration}s`,
-              animationDelay: `${s.delay}s`,
-            }}
-          />
-        ))}
-        {clouds.map((c, i) => (
-          <span
-            key={i}
-            className="hd-cloud"
-            style={{
-              top: `${c.top}%`,
-              left: `${c.left}%`,
-              transform: `scale(${c.scale})`,
-              animationDuration: `${c.duration}s`,
-              animationDelay: `${c.delay}s`,
-            }}
-          />
-        ))}
-        <svg
-          className="hd-hills"
-          viewBox="0 0 1440 320"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,200 C240,260 420,140 720,180 C1000,216 1200,120 1440,190 L1440,320 L0,320 Z"
-            fill={isDark ? "#0c1a12" : "#8fc76a"}
-            opacity={isDark ? 0.9 : 0.9}
-          />
-          <path
-            d="M0,240 C260,290 460,220 760,250 C1040,278 1220,220 1440,260 L1440,320 L0,320 Z"
-            fill={isDark ? "#071009" : "#79b757"}
-          />
-        </svg>
-      </div>
 
       {/* header */}
       <header className="hd-header">

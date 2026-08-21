@@ -43,9 +43,9 @@ interface HeroSectionProps {
 }
 
 const TIMING = {
-  logoIn: 200, // ms before logo starts fading in
-  logoHold: 900, // ms the logo sits/pulses before reveal starts
-  reveal: 1100, // ms for the logo -> video dissolve/zoom
+  logoIn: 400, // ms before logo starts fading in
+  logoHold: 3500, // ms the logo sits/pulses before reveal starts
+  reveal: 1300, // ms for the logo -> video dissolve/zoom
 };
 
 const DEFAULT_SLIDES: Slide[] = [
