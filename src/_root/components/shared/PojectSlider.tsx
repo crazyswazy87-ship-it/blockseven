@@ -1,37 +1,40 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../../../ProjectSlider.css";
 import ShinyText from "../../../component/ShinyText";
 import Shuffle from "../../../component/Shuffle";
-
 interface Project {
   bg: string;
   thumb: string;
   title: string;
   desc: string;
   btnLabel: string;
+  url: string;
 }
 
 const PROJECTS: Project[] = [
-  {
-    bg: "/assets/images/pesosbg.png",
-    thumb: "/assets/images/pesoslogo.jpg",
-    title: "PESOS",
-    desc: "Streetwear brand",
-    btnLabel: "View Project",
-  },
   {
     bg: "/assets/images/wolfbg.png",
     thumb: "/assets/images/wolflogo.png",
     title: "WOLFGNG",
     desc: "Fitness apparel",
     btnLabel: "View Project",
+    url: "https://wolfgang.fit",
   },
   {
     bg: "/assets/images/shengbg.png",
     thumb: "/assets/images/sheng.png",
-    title: "SHENG AI",
+    title: "SHENG",
     desc: "AI Sheng translator",
     btnLabel: "View Project",
+    url: "https://sheng.buzz",
+  },
+  {
+    bg: "/assets/images/pesosbg.png",
+    thumb: "/assets/images/pesoslogo.jpg",
+    title: "PESOS",
+    desc: "Streetwear brand",
+    btnLabel: "View Project",
+    url: "https://pesosworldwide.com",
   },
   {
     bg: "/assets/images/artshordybg.jpg",
@@ -39,6 +42,7 @@ const PROJECTS: Project[] = [
     title: "SHORDY",
     desc: "Creative crafts",
     btnLabel: "View Project",
+    url: "https://artshordy.com",
   },
   {
     bg: "/assets/images/konektbg.png",
@@ -46,6 +50,7 @@ const PROJECTS: Project[] = [
     title: "KONEKT",
     desc: "Prepaid Wi-Fi",
     btnLabel: "View Project",
+    url: "https://konekt.works",
   },
 ];
 
@@ -55,6 +60,30 @@ export default function ProjectSlider() {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   const dotsRef = useRef<HTMLDivElement>(null);
+
+  const [leaving, setLeaving] = useState(false);
+  const [countdown, setCountdown] = useState(3);
+  const [destination, setDestination] = useState("");
+
+  const navigateToProject = (url: string) => {
+    if (leaving) return;
+
+    setDestination(url);
+    setCountdown(3);
+    setLeaving(true);
+
+    let count = 3;
+
+    const interval = window.setInterval(() => {
+      count -= 1;
+      setCountdown(count);
+
+      if (count === 0) {
+        clearInterval(interval);
+        window.location.href = url;
+      }
+    }, 1000);
+  };
 
   useEffect(() => {
     const wrap = wrapRef.current;
@@ -193,11 +222,11 @@ export default function ProjectSlider() {
                   <p>
                       <ShinyText
                       text={p.desc}
-                      speed={3}
+                      speed={3.5}
                       delay={0}
-                      color="#ffff"
+                      color="#000"
                       shineColor="#e7e433"
-                      spread={120}
+                      spread={100}
                       direction="left"
                       yoyo={false}
                       pauseOnHover
@@ -205,24 +234,29 @@ export default function ProjectSlider() {
                       className="project-card__desc"
                     />
                   </p>
-                  <button className="project-card__btn">
-                     <Shuffle
-                      text={p.btnLabel}
-                      shuffleDirection="down"
-                      duration={0.25}
-                      animationMode="evenodd"
-                      shuffleTimes={1}
-                      ease="power2.out"
-                      stagger={0.09}
-                      threshold={0.1}
-                      triggerOnce={true}
-                      triggerOnHover
-                      respectReducedMotion={true}
-                      loop={false}
-                      loopDelay={0}
-                      
-                    />
-                    </button>
+                 <button
+                  className="project-card__btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigateToProject(p.url);
+                  }}
+                >
+                  <Shuffle
+                    text={p.btnLabel}
+                    shuffleDirection="down"
+                    duration={0.25}
+                    animationMode="evenodd"
+                    shuffleTimes={1}
+                    ease="power2.out"
+                    stagger={0.09}
+                    threshold={0.1}
+                    triggerOnce={true}
+                    triggerOnHover
+                    respectReducedMotion={true}
+                    loop={false}
+                    loopDelay={0}
+                  />
+                </button>
                 </div>
               </div>
             </article>
@@ -231,6 +265,28 @@ export default function ProjectSlider() {
       </div>
 
       <div className="dots" ref={dotsRef} id="dots" />
+      {leaving && (
+        <div className="leaving-toast">
+          <div className="leaving-toast__content">
+            <span className="leaving-toast__dot" />
+
+            <div>
+              <strong>You’re about to leave this site</strong>
+              <p>Taking you to the project in {countdown}s...</p>
+            </div>
+
+            <button
+              className="leaving-toast__cancel"
+              onClick={() => {
+                setLeaving(false);
+                setCountdown(3);
+              }}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

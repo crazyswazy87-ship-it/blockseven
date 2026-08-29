@@ -384,17 +384,17 @@ const demoItems = [
             slideFadeMs={1000}
             slides={[
               {
-                headline: "Beyond static websites. Into cinematic experiences",
+                headline: "We create cinematic experiences, beyond static websites",
                 subhead:
                   "Block Seven creates cinematic websites and interactive digital experiences that transform brands into unforgettable stories.",
               },
               {
-                headline: "Where brands become unforgettable",
+                headline: "This is Where brands become unforgettable",
                 subhead:
                   "Block Seven creates cinematic digital experiences that inspire trust, spark emotion, and convert visitors into customers.",
               },
               {
-                headline: "Building the digital backbone of modern websites",
+                headline: "We build the digital backbone of modern websites",
                 subhead:
                   "Luxury hotels, real estate, eCommerce, startups, restaurants, portfolios, and enterprise solutions—crafted with precision from concept to launch.",
               },
